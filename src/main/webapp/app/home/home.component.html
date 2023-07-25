@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-3">
+    <span class="hipster img-fluid rounded"></span>
+  </div>
+
+  <div class="col-md-9">
+    <h1 class="display-4"><span jhiTranslate="home.title">Bem-vindo!</span></h1>
+
+    <p class="lead" jhiTranslate="home.subtitle">Esta é a página principal</p>
+
+    <div [ngSwitch]="account !== null">
+      <div class="alert alert-success" *ngSwitchCase="true">
+        <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message" [translateValues]="{ username: account.login }"
+          >Está autenticado como "{{ account.login }}".</span
+        >
+      </div>
+
+      <div class="alert alert-warning" *ngSwitchCase="false">
+        <span jhiTranslate="global.messages.info.authenticated.prefix">Para </span>
+        <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">entrar</a
+        ><span jhiTranslate="global.messages.info.authenticated.suffix"
+          >, utilize as seguintes contas:<br />- Administrador (utilizador="admin" e palavra-passe="admin") <br />- Direcao
+          (utilizador="direcao" e palavra-passe="direcao")<br />- Utilizador (utilizador="user" e palavra-passe="user").</span
+        >
+      </div>
+
+      <div class="alert alert-warning" *ngSwitchCase="false">
+        <span jhiTranslate="global.messages.info.register.noaccount">Ainda não tem uma conta?</span>&nbsp;
+        <a class="alert-link" routerLink="/account/register" jhiTranslate="global.messages.info.register.link">Crie uma nova conta</a>
+      </div>
+    </div>
+  </div>
+</div>

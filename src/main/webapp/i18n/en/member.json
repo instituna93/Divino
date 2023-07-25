@@ -1,0 +1,33 @@
+{
+  "mngmtInstitunaApp": {
+    "member": {
+      "home": {
+        "title": "Members",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Member",
+        "createOrEditLabel": "Create or edit a Member",
+        "notFound": "No Members found"
+      },
+      "created": "A new Member is created with identifier {{ param }}",
+      "updated": "A Member is updated with identifier {{ param }}",
+      "deleted": "A Member is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Member {{ id }}?"
+      },
+      "detail": {
+        "title": "Member"
+      },
+      "id": "ID",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "deletedBy": "Deleted By",
+      "deletedOn": "Deleted On",
+      "nickname": "Nickname",
+      "birthday": "Birthday",
+      "user": "User",
+      "tags": "Tags"
+    }
+  }
+}

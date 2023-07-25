@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity MemberTag.
+    -->
+    <changeSet id="20230726063804-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="tag_id"
+                                 baseTableName="member_tag"
+                                 constraintName="fk_member_tag__tag_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tag"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="member_id"
+                                 baseTableName="member_tag"
+                                 constraintName="fk_member_tag__member_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="member"
+                                 />
+    </changeSet>
+</databaseChangeLog>

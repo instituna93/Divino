@@ -1,0 +1,78 @@
+Notas:
+01 - todos os "apagar" devem tentar ser virtuais, as tabelas devem ter um campo deletedBy(user), deletedOn(date)
+02 - todas as tabelas devem ter os campos createdBy(user), createdOn(date), updatedBy(user), updatedOn(date)
+
+
+
+
+
+A Validar:
+001 - lista de membros
+002 - lista de tipos de tags (cargos de direcao, hierarquia, instrumento, naipe, restrição alimentar, problema de saude, etc)
+003 - lista de tags por tipo (1-N entre Tag e TipoTag) (cargo -> presi, magister, etc, hierarquia -> carrega, tuno, instituno, naipe -> etc..)
+005 - lista de tags por membro (N-N entre Tag e Membro)
+006 - adicionar uma flag aos tipos de tags, para identificar quais são geridos por admin, e quais são geridos pelo utilizador
+
+
+
+
+
+
+A fazer:
+004 - pagina para um membro da direcao gerir tags associados a um tipo: criar, editar, apagar
+007 - pagina de admin para gerir roles associados a um membro (Hierarquia, cargo de direção, instrumento, naipe, etc)
+008 - pagina de utilizador para um utilizador gerir os seus proprios roles (restrição alimentar, problema de saude, etc)
+009 - adicionar um default tag aos tipos de tag (1-N entre TipoTag e Tag), para identificar uma tag default quando nenhuma outra está selecionada (quando nenhuma restrição alimentar está selecionada, faz default á tag "Nenhuma")
+...
+
+020 - lista de eventos
+021 - pagina para um membro da direcao gerir eventos: criar, editar, apagar
+022 - apenas membros com um role no tipo de role, cargos de direcao, podem gerir eventos
+(mais tarde, pode-se criar uma tabela de permissões para tarefas, e associação dessas permissões as roles, mas para arranque, esta restrição é suficiente)
+nesta pagina, o membro da direcao tem de conseguir ver um agrupamento dos roles por tipo de role, ex: instrumentos: 5 guitarras, 2 bandolins, naipes: 3 medios, 1 alto, 3 baixos, restrição alimentar: 6 Nenhuma, 1 alergico ao gluten, etc..
+023 - lista de presenças em eventos (1-N com membros, e 1-N com eventos)
+024 - pagina de utilizador para um utilizador se inscrever num evento
+025 - pagina de utilizador membro da direcao para validar presenças num evento
+o utilizador inscreve-se no evento, o membro da direção, tem a lista de membros, onde confirma se o membro apareceu ou não, de preferencia algo que seja facil de gerir, com uma lista de pessoas, e uma checkbox a frente de cada um
+026 - roles das presenças????? colocamos na mesma tabela de roles, ou fazemos uma nova?
+posso levar carro/vou la ter/preciso de boleia, tenho saco de cama, preciso saco cama emprestado, etc..
+...
+
+040 - lista de movimentos (folha de contas)
+041 - lista de faturas (adicionadas por um membro)
+042 - pagina para um utilizador gerir faturas: criar, editar, apagar (apenas pode editar/apagar se a mesma não tiver aprovada)
+043 - pagina para um membro da direcao gerir faturas: aprovar, rejeitar
+044 - o membro da direcao tem que poder editar os dados da fatura antes de a aprovar/integrar na lista de movimentos
+045 - o membro da direcao tem que preencher um motivo de rejeição para rejeitar uma fatura
+...
+
+060 - lista de contactos externos
+061 - pagina para um membro da direcao gerir contactos externos: criar, editar, apagar
+...
+
+070 - lista de alertas(caixa de saida) (a aplicação vai escrever os emails a enviar aqui, será outra aplicação a ler os emails daqui e envia-los desynchronized)
+071 - lista de criação de atividades de direcao, com agendamento de alertas para avisar os membros da direção que têm algo para fazer
+072 -
+
+...
+080 - lista de eventos globais anuais (aniversario da tuna, ano novo, dia da musica, dia do estudante, etc)
+081 - pagina para um membro da direcao gerir eventos globais anuais: criar, editar, apagar
+082 -
+...
+
+090 - view sql para devolver eventos do mes (eventos globais anuais, eventos, aniversarios dos membros)
+091 - pagina com calendario mensal que apresenta um calendario com todos os eventos que acontecem nesse mes
+092 - a partir do calendario mensal, cada evento no calendario, permite aceder ao evento em questão
+...
+
+100 - lista de artigos (tabela artigo para definir tipos de artigos a gerir)
+101 - lista de stocks (tabela para gerir entradas e saidas de stocks)
+102 - pagina de membro da direcao para gerir artigos: criar, editar, apagar
+103 - pagina de membro da direcao para gerir stocks: criar, editar, apagar
+104 - view sql para calcular os stocks por artigo
+105 - pagina de membro da direcao para verificar stocks correntes com base na view sql
+...
+
+
+
+falta estruturar orcamentos

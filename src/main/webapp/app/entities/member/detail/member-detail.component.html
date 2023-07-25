@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="member">
+      <h2 data-cy="memberDetailsHeading"><span jhiTranslate="mngmtInstitunaApp.member.detail.title">Member</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">Código</span></dt>
+        <dd>
+          <span>{{ member.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.member.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ member.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.member.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ member.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.member.updatedBy">Updated By</span></dt>
+        <dd>
+          <span>{{ member.updatedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.member.updatedOn">Updated On</span></dt>
+        <dd>
+          <span>{{ member.updatedOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.member.deletedBy">Deleted By</span></dt>
+        <dd>
+          <span>{{ member.deletedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.member.deletedOn">Deleted On</span></dt>
+        <dd>
+          <span>{{ member.deletedOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.member.nickname">Nickname</span></dt>
+        <dd>
+          <span>{{ member.nickname }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.member.birthday">Birthday</span></dt>
+        <dd>
+          <span>{{ member.birthday | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.member.user">User</span></dt>
+        <dd>
+          <span>{{ member.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Voltar</span>
+      </button>
+
+      <button type="button" [routerLink]="['/member', member.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

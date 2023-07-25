@@ -1,0 +1,56 @@
+{
+  "applications": "*",
+  "changelogDate": "20230726063804",
+  "dto": "mapstruct",
+  "entityTableName": "member_tag",
+  "fields": [
+    {
+      "fieldName": "createdBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "deletedBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "deletedOn",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "MemberTag",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityField": "description",
+      "otherEntityName": "tag",
+      "otherEntityRelationshipName": "members",
+      "relationshipName": "tag",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "nickname",
+      "otherEntityName": "member",
+      "otherEntityRelationshipName": "tags",
+      "relationshipName": "member",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

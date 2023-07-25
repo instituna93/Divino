@@ -1,0 +1,32 @@
+{
+  "mngmtInstitunaApp": {
+    "tag": {
+      "home": {
+        "title": "Tags",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Tag",
+        "createOrEditLabel": "Criar ou editar Tag",
+        "notFound": "Nenhum Tags encontrado"
+      },
+      "created": "Um novo Tag foi criado com o identificador {{ param }}",
+      "updated": "Tag com identificador {{ param }} foi actualizado",
+      "deleted": "Tag com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Tag {{ id }}?"
+      },
+      "detail": {
+        "title": "Tag"
+      },
+      "id": "ID",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "deletedBy": "Deleted By",
+      "deletedOn": "Deleted On",
+      "description": "Description",
+      "tagType": "Tag Type",
+      "members": "Members"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+
+// #################################################################
+//  Tables
+// #################################################################
+entity Member {
+	createdBy Long
+	createdOn Instant
+	updatedBy Long
+	updatedOn Instant
+	deletedBy Long
+	deletedOn Instant
+	
+	nickname String
+	birthday LocalDate
+}
+
+entity TagType {
+	createdBy Long
+	createdOn Instant
+	updatedBy Long
+	updatedOn Instant
+	deletedBy Long
+	deletedOn Instant
+	
+	description String required
+	restricted Boolean
+}
+
+entity Tag {
+	createdBy Long
+	createdOn Instant
+	updatedBy Long
+	updatedOn Instant
+	deletedBy Long
+	deletedOn Instant
+	
+	description String required
+}
+
+// If we define a ManyToMany manually, it is more complex, but we can later add fields to the relationship table if ever needed
+entity MemberTag {
+	createdBy Long
+	createdOn Instant
+	updatedBy Long
+	updatedOn Instant
+	deletedBy Long
+	deletedOn Instant
+}
+
+
+
+// #################################################################
+//  Relationships
+// #################################################################
+relationship OneToOne {
+	Member to User with builtInEntity
+}
+
+relationship ManyToOne {
+	Tag{tagType(description) required} to TagType{tags(description)}
+	MemberTag{tag(description) required} to Tag{members}
+	MemberTag{member(nickname) required} to Member{tags}
+	TagType{defaultTag(description)} to Tag
+}
+
+
+
+
+
+// #################################################################
+//  Default options
+// #################################################################
+paginate * with infinite-scroll
+service * with serviceImpl
+dto * with mapstruct
+search * with no

@@ -1,0 +1,31 @@
+{
+  "mngmtInstitunaApp": {
+    "memberTag": {
+      "home": {
+        "title": "Member Tags",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Member Tag",
+        "createOrEditLabel": "Criar ou editar Member Tag",
+        "notFound": "Nenhum Member Tags encontrado"
+      },
+      "created": "Um novo Member Tag foi criado com o identificador {{ param }}",
+      "updated": "Member Tag com identificador {{ param }} foi actualizado",
+      "deleted": "Member Tag com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Member Tag {{ id }}?"
+      },
+      "detail": {
+        "title": "Member Tag"
+      },
+      "id": "ID",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "deletedBy": "Deleted By",
+      "deletedOn": "Deleted On",
+      "tag": "Tag",
+      "member": "Member"
+    }
+  }
+}

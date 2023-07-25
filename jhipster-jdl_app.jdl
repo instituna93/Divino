@@ -1,0 +1,29 @@
+
+application {
+	config {
+		applicationType monolith
+		authenticationType jwt
+		baseName MngmtInstituna
+		buildTool maven
+		cacheProvider no
+		clientFramework angular
+		clientTheme none
+		databaseType sql
+		devDatabaseType h2Disk
+		enableSwaggerCodegen false
+		enableTranslation true
+		jhiPrefix jhi
+		languages [pt-pt, en]
+		messageBroker no
+		nativeLanguage pt-pt
+		packageName com.instituna
+		prodDatabaseType postgresql
+		reactive true
+		searchEngine no
+		serviceDiscoveryType no
+		skipClient false
+		skipUserManagement false
+		testFrameworks []
+		websocket no
+	}
+}

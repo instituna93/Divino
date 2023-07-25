@@ -1,0 +1,136 @@
+<div>
+  <h2 id="page-heading" data-cy="TagHeading">
+    <span jhiTranslate="mngmtInstitunaApp.tag.home.title">Tags</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="mngmtInstitunaApp.tag.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-tag"
+        [routerLink]="['/tag/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="mngmtInstitunaApp.tag.home.createLabel"> Criar novo(a) Tag </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="tags?.length === 0">
+    <span jhiTranslate="mngmtInstitunaApp.tag.home.notFound">Nenhum Tags encontrado</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="tags && tags.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">Código</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdBy">
+            <div class="d-flex">
+              <span jhiTranslate="mngmtInstitunaApp.tag.createdBy">Created By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdOn">
+            <div class="d-flex">
+              <span jhiTranslate="mngmtInstitunaApp.tag.createdOn">Created On</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updatedBy">
+            <div class="d-flex">
+              <span jhiTranslate="mngmtInstitunaApp.tag.updatedBy">Updated By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updatedOn">
+            <div class="d-flex">
+              <span jhiTranslate="mngmtInstitunaApp.tag.updatedOn">Updated On</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="deletedBy">
+            <div class="d-flex">
+              <span jhiTranslate="mngmtInstitunaApp.tag.deletedBy">Deleted By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="deletedOn">
+            <div class="d-flex">
+              <span jhiTranslate="mngmtInstitunaApp.tag.deletedOn">Deleted On</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="description">
+            <div class="d-flex">
+              <span jhiTranslate="mngmtInstitunaApp.tag.description">Description</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="tagType.description">
+            <div class="d-flex">
+              <span jhiTranslate="mngmtInstitunaApp.tag.tagType">Tag Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody
+        infinite-scroll
+        (scrolled)="loadPage(page + 1)"
+        [infiniteScrollDisabled]="page - 1 >= links['last']"
+        [infiniteScrollDistance]="0"
+      >
+        <tr *ngFor="let tag of tags; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/tag', tag.id, 'view']">{{ tag.id }}</a>
+          </td>
+          <td>{{ tag.createdBy }}</td>
+          <td>{{ tag.createdOn | formatMediumDatetime }}</td>
+          <td>{{ tag.updatedBy }}</td>
+          <td>{{ tag.updatedOn | formatMediumDatetime }}</td>
+          <td>{{ tag.deletedBy }}</td>
+          <td>{{ tag.deletedOn | formatMediumDatetime }}</td>
+          <td>{{ tag.description }}</td>
+          <td>
+            <div *ngIf="tag.tagType">
+              <a [routerLink]="['/tag-type', tag.tagType.id, 'view']">{{ tag.tagType.description }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/tag', tag.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Visualizar</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/tag', tag.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
+              </button>
+
+              <button type="submit" (click)="delete(tag)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Eliminar</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

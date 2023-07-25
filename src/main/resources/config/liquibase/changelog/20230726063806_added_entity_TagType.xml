@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity TagType.
+    -->
+    <changeSet id="20230726063806-1" author="jhipster">
+        <createTable tableName="tag_type">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="created_by" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_on" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_by" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_on" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_by" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_on" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="restricted" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="default_tag_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="tag_type" columnName="created_on" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="tag_type" columnName="updated_on" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="tag_type" columnName="deleted_on" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+</databaseChangeLog>

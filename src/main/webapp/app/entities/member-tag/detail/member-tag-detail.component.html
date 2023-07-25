@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="memberTag">
+      <h2 data-cy="memberTagDetailsHeading"><span jhiTranslate="mngmtInstitunaApp.memberTag.detail.title">Member Tag</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">Código</span></dt>
+        <dd>
+          <span>{{ memberTag.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.memberTag.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ memberTag.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.memberTag.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ memberTag.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.memberTag.updatedBy">Updated By</span></dt>
+        <dd>
+          <span>{{ memberTag.updatedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.memberTag.updatedOn">Updated On</span></dt>
+        <dd>
+          <span>{{ memberTag.updatedOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.memberTag.deletedBy">Deleted By</span></dt>
+        <dd>
+          <span>{{ memberTag.deletedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.memberTag.deletedOn">Deleted On</span></dt>
+        <dd>
+          <span>{{ memberTag.deletedOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.memberTag.tag">Tag</span></dt>
+        <dd>
+          <div *ngIf="memberTag.tag">
+            <a [routerLink]="['/tag', memberTag.tag.id, 'view']">{{ memberTag.tag.description }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="mngmtInstitunaApp.memberTag.member">Member</span></dt>
+        <dd>
+          <div *ngIf="memberTag.member">
+            <a [routerLink]="['/member', memberTag.member.id, 'view']">{{ memberTag.member.nickname }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Voltar</span>
+      </button>
+
+      <button type="button" [routerLink]="['/member-tag', memberTag.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>
