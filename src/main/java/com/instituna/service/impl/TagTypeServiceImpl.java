@@ -3,8 +3,11 @@ package com.instituna.service.impl;
 import com.instituna.domain.TagType;
 import com.instituna.repository.TagTypeRepository;
 import com.instituna.service.TagTypeService;
+import com.instituna.service.UserService;
 import com.instituna.service.dto.TagTypeDTO;
 import com.instituna.service.mapper.TagTypeMapper;
+import java.time.Instant;
+import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Pageable;
@@ -23,39 +26,69 @@ public class TagTypeServiceImpl implements TagTypeService {
     private final Logger log = LoggerFactory.getLogger(TagTypeServiceImpl.class);
 
     private final TagTypeRepository tagTypeRepository;
-
     private final TagTypeMapper tagTypeMapper;
 
-    public TagTypeServiceImpl(TagTypeRepository tagTypeRepository, TagTypeMapper tagTypeMapper) {
+    private final UserService userService;
+
+    public TagTypeServiceImpl(TagTypeRepository tagTypeRepository, TagTypeMapper tagTypeMapper, UserService userService) {
         this.tagTypeRepository = tagTypeRepository;
         this.tagTypeMapper = tagTypeMapper;
+        this.userService = userService;
     }
 
     @Override
     public Mono<TagTypeDTO> save(TagTypeDTO tagTypeDTO) {
         log.debug("Request to save TagType : {}", tagTypeDTO);
-        return tagTypeRepository.save(tagTypeMapper.toEntity(tagTypeDTO)).map(tagTypeMapper::toDto);
+
+        return userService
+            .getUserWithAuthorities()
+            .flatMap(user -> {
+                Instant timeStamp = (new Date()).toInstant();
+                tagTypeDTO.setCreatedBy(user.getId());
+                tagTypeDTO.setCreatedOn(timeStamp);
+                tagTypeDTO.setUpdatedBy(user.getId());
+                tagTypeDTO.setUpdatedOn(timeStamp);
+
+                return tagTypeRepository.save(tagTypeMapper.toEntity(tagTypeDTO)).map(tagTypeMapper::toDto);
+            });
     }
 
     @Override
     public Mono<TagTypeDTO> update(TagTypeDTO tagTypeDTO) {
         log.debug("Request to update TagType : {}", tagTypeDTO);
-        return tagTypeRepository.save(tagTypeMapper.toEntity(tagTypeDTO)).map(tagTypeMapper::toDto);
+
+        return userService
+            .getUserWithAuthorities()
+            .flatMap(user -> {
+                Instant timeStamp = (new Date()).toInstant();
+                tagTypeDTO.setUpdatedBy(user.getId());
+                tagTypeDTO.setUpdatedOn(timeStamp);
+
+                return tagTypeRepository.save(tagTypeMapper.toEntity(tagTypeDTO)).map(tagTypeMapper::toDto);
+            });
     }
 
     @Override
     public Mono<TagTypeDTO> partialUpdate(TagTypeDTO tagTypeDTO) {
         log.debug("Request to partially update TagType : {}", tagTypeDTO);
 
-        return tagTypeRepository
-            .findById(tagTypeDTO.getId())
-            .map(existingTagType -> {
-                tagTypeMapper.partialUpdate(existingTagType, tagTypeDTO);
+        return userService
+            .getUserWithAuthorities()
+            .flatMap(user -> {
+                Instant timeStamp = (new Date()).toInstant();
+                tagTypeDTO.setUpdatedBy(user.getId());
+                tagTypeDTO.setUpdatedOn(timeStamp);
 
-                return existingTagType;
-            })
-            .flatMap(tagTypeRepository::save)
-            .map(tagTypeMapper::toDto);
+                return tagTypeRepository
+                    .findById(tagTypeDTO.getId())
+                    .map(existingTagType -> {
+                        tagTypeMapper.partialUpdate(existingTagType, tagTypeDTO);
+
+                        return existingTagType;
+                    })
+                    .flatMap(tagTypeRepository::save)
+                    .map(tagTypeMapper::toDto);
+            });
     }
 
     @Override

@@ -92,6 +92,21 @@ class MemberRepositoryInternalImpl extends SimpleR2dbcRepository<Member, Long> i
         return createQuery(null, whereClause).one();
     }
 
+    @Override
+    public Mono<Member> findOneWithEagerRelationships(Long id) {
+        return findById(id);
+    }
+
+    @Override
+    public Flux<Member> findAllWithEagerRelationships() {
+        return findAll();
+    }
+
+    @Override
+    public Flux<Member> findAllWithEagerRelationships(Pageable page) {
+        return findAllBy(page);
+    }
+
     private Member process(Row row, RowMetadata metadata) {
         Member entity = memberMapper.apply(row, "e");
         entity.setUser(userMapper.apply(row, "user"));

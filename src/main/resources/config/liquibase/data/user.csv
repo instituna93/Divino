@@ -1,4 +1,4 @@
 id;login;password_hash;first_name;last_name;email;image_url;activated;lang_key;created_by;last_modified_by
 1;admin;$2a$10$gSAhZrxMllrbgj/kkK9UceBPpChGWJA7SYIb1Mqo.n5aNLq1/oRrC;Administrator;Administrator;admin@localhost;;true;pt-pt;system;system
-2;direcao;$2a$10$jir4wSTr3HclPBbft1loGuQGYUttPZn34J0WR0kq7q2jxedA0Qgzi;DireÃ§Ã£o;DireÃ§Ã£o;direcao@localhost;;true;pt-pt;system;system
+2;direcao;$2a$10$jir4wSTr3HclPBbft1loGuQGYUttPZn34J0WR0kq7q2jxedA0Qgzi;Direção;Direção;direcao@localhost;;true;pt-pt;system;system
 3;user;$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K;User;User;user@localhost;;true;pt-pt;system;system

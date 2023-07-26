@@ -11,7 +11,7 @@ export interface IMember {
   deletedOn?: dayjs.Dayjs | null;
   nickname?: string | null;
   birthday?: dayjs.Dayjs | null;
-  user?: Pick<IUser, 'id'> | null;
+  user?: Pick<IUser, 'id' | 'login'> | null;
 }
 
 export type NewMember = Omit<IMember, 'id'> & { id: null };

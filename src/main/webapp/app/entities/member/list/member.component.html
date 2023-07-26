@@ -89,7 +89,7 @@
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
-            <th scope="col" jhiSortBy="user.id">
+            <th scope="col" jhiSortBy="user.login">
               <div class="d-flex">
                 <span jhiTranslate="mngmtInstitunaApp.member.user">User</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
@@ -121,7 +121,7 @@
             <td>{{ member.nickname }}</td>
             <td>{{ member.birthday | formatMediumDate }}</td>
             <td>
-              {{ member.user?.id }}
+              {{ member.user?.login }}
             </td>
 
             <td class="text-end">

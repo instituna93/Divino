@@ -41,8 +41,8 @@
   "pagination": "infinite-scroll",
   "relationships": [
     {
+      "otherEntityField": "login",
       "otherEntityName": "user",
-      "otherEntityRelationshipName": "member",
       "relationshipName": "user",
       "relationshipSide": "left",
       "relationshipType": "one-to-one",

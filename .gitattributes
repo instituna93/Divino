@@ -10,26 +10,26 @@
 *.bat           text eol=crlf
 *.cmd           text eol=crlf
 *.ps1           text eol=crlf
-*.coffee        text
-*.css           text
-*.cql           text
-*.df            text
-*.ejs           text
-*.html          text
-*.java          text
-*.js            text
-*.json          text
-*.less          text
-*.properties    text
-*.sass          text
-*.scss          text
+*.coffee        text eol=lf
+*.css           text eol=lf
+*.cql           text eol=lf
+*.df            text eol=lf
+*.ejs           text eol=lf
+*.html          text eol=lf
+*.java          text eol=lf
+*.js            text eol=lf
+*.json          text eol=lf
+*.less          text eol=lf
+*.properties    text eol=lf
+*.sass          text eol=lf
+*.scss          text eol=lf
 *.sh            text eol=lf
-*.sql           text
-*.txt           text
-*.ts            text
-*.xml           text
-*.yaml          text
-*.yml           text
+*.sql           text eol=lf
+*.txt           text eol=lf
+*.ts            text eol=lf
+*.xml           text eol=lf
+*.yaml          text eol=lf
+*.yml           text eol=lf
 
 # Documents
 *.doc           diff=astextplain

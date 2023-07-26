@@ -42,6 +42,14 @@ public interface MemberService {
     Flux<MemberDTO> findAll(Pageable pageable);
 
     /**
+     * Get all the members with eager load of many-to-many relationships.
+     *
+     * @param pageable the pagination information.
+     * @return the list of entities.
+     */
+    Flux<MemberDTO> findAllWithEagerRelationships(Pageable pageable);
+
+    /**
      * Returns the number of members available.
      * @return the number of entities in the database.
      *

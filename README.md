@@ -1,13 +1,13 @@
 # MngmtInstituna
 
-AlteraÃ§Ãµes Ã¡ BD:
+Alterações á BD:
 alterar o ficheiro: jhipster-jdl_db.jdl
 executar comando: jhipster jdl jhipster-jdl_db.jdl
 
 Se for uma tabela de dados estaticos, podem criar um ficheiro com dados aqui:
 para aqui: \src\main\resources\config\liquibase\data
 
-e adicionar a importaÃ§Ã£o dos dados aqui: \src\main\resources\config\liquibase\changelog\20230726063807_added_data.xml
+e adicionar a importação dos dados aqui: \src\main\resources\config\liquibase\changelog\20230726063807_added_data.xml
 ou num novo ficheiro, que nesse caso deve estar referenciado aqui: \src\main\resources\config\liquibase
 
 Podem ter que apagar a pasta para fazer reset a BD local de testes: \target\h2db

@@ -61,6 +61,7 @@ public class MemberResource {
         if (memberDTO.getId() != null) {
             throw new BadRequestAlertException("A new member cannot already have an ID", ENTITY_NAME, "idexists");
         }
+
         return memberService
             .save(memberDTO)
             .map(result -> {
@@ -166,12 +167,14 @@ public class MemberResource {
      *
      * @param pageable the pagination information.
      * @param request a {@link ServerHttpRequest} request.
+     * @param eagerload flag to eager load entities from relationships (This is applicable for many-to-many).
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of members in body.
      */
     @GetMapping(value = "/members", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<List<MemberDTO>>> getAllMembers(
         @org.springdoc.core.annotations.ParameterObject Pageable pageable,
-        ServerHttpRequest request
+        ServerHttpRequest request,
+        @RequestParam(required = false, defaultValue = "false") boolean eagerload
     ) {
         log.debug("REST request to get a page of Members");
         return memberService

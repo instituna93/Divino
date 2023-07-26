@@ -12,7 +12,7 @@ A Validar:
 003 - lista de tags por tipo (1-N entre Tag e TipoTag) (cargo -> presi, magister, etc, hierarquia -> carrega, tuno, instituno, naipe -> etc..)
 005 - lista de tags por membro (N-N entre Tag e Membro)
 006 - adicionar uma flag aos tipos de tags, para identificar quais são geridos por admin, e quais são geridos pelo utilizador
-
+009 - adicionar um default tag aos tipos de tag (1-N entre TipoTag e Tag), para identificar uma tag default quando nenhuma outra está selecionada (quando nenhuma restrição alimentar está selecionada, faz default á tag "Nenhuma")
 
 
 
@@ -22,7 +22,6 @@ A fazer:
 004 - pagina para um membro da direcao gerir tags associados a um tipo: criar, editar, apagar
 007 - pagina de admin para gerir roles associados a um membro (Hierarquia, cargo de direção, instrumento, naipe, etc)
 008 - pagina de utilizador para um utilizador gerir os seus proprios roles (restrição alimentar, problema de saude, etc)
-009 - adicionar um default tag aos tipos de tag (1-N entre TipoTag e Tag), para identificar uma tag default quando nenhuma outra está selecionada (quando nenhuma restrição alimentar está selecionada, faz default á tag "Nenhuma")
 ...
 
 020 - lista de eventos

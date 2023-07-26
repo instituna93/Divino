@@ -53,7 +53,7 @@ entity MemberTag {
 //  Relationships
 // #################################################################
 relationship OneToOne {
-	Member to User with builtInEntity
+	Member{user(login)} to User with builtInEntity
 }
 
 relationship ManyToOne {

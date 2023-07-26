@@ -63,6 +63,7 @@ public class TagResource {
         if (tagDTO.getId() != null) {
             throw new BadRequestAlertException("A new tag cannot already have an ID", ENTITY_NAME, "idexists");
         }
+
         return tagService
             .save(tagDTO)
             .map(result -> {

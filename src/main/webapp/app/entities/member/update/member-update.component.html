@@ -128,7 +128,7 @@
             <label class="form-label" jhiTranslate="mngmtInstitunaApp.member.user" for="field_user">User</label>
             <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user" [compareWith]="compareUser">
               <option [ngValue]="null"></option>
-              <option [ngValue]="userOption" *ngFor="let userOption of usersSharedCollection">{{ userOption.id }}</option>
+              <option [ngValue]="userOption" *ngFor="let userOption of usersSharedCollection">{{ userOption.login }}</option>
             </select>
           </div>
         </div>

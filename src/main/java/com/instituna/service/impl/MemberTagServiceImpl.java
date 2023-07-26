@@ -3,8 +3,11 @@ package com.instituna.service.impl;
 import com.instituna.domain.MemberTag;
 import com.instituna.repository.MemberTagRepository;
 import com.instituna.service.MemberTagService;
+import com.instituna.service.UserService;
 import com.instituna.service.dto.MemberTagDTO;
 import com.instituna.service.mapper.MemberTagMapper;
+import java.time.Instant;
+import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Pageable;
@@ -23,39 +26,69 @@ public class MemberTagServiceImpl implements MemberTagService {
     private final Logger log = LoggerFactory.getLogger(MemberTagServiceImpl.class);
 
     private final MemberTagRepository memberTagRepository;
-
     private final MemberTagMapper memberTagMapper;
 
-    public MemberTagServiceImpl(MemberTagRepository memberTagRepository, MemberTagMapper memberTagMapper) {
+    private final UserService userService;
+
+    public MemberTagServiceImpl(MemberTagRepository memberTagRepository, MemberTagMapper memberTagMapper, UserService userService) {
         this.memberTagRepository = memberTagRepository;
         this.memberTagMapper = memberTagMapper;
+        this.userService = userService;
     }
 
     @Override
     public Mono<MemberTagDTO> save(MemberTagDTO memberTagDTO) {
         log.debug("Request to save MemberTag : {}", memberTagDTO);
-        return memberTagRepository.save(memberTagMapper.toEntity(memberTagDTO)).map(memberTagMapper::toDto);
+
+        return userService
+            .getUserWithAuthorities()
+            .flatMap(user -> {
+                Instant timeStamp = (new Date()).toInstant();
+                memberTagDTO.setCreatedBy(user.getId());
+                memberTagDTO.setCreatedOn(timeStamp);
+                memberTagDTO.setUpdatedBy(user.getId());
+                memberTagDTO.setUpdatedOn(timeStamp);
+
+                return memberTagRepository.save(memberTagMapper.toEntity(memberTagDTO)).map(memberTagMapper::toDto);
+            });
     }
 
     @Override
     public Mono<MemberTagDTO> update(MemberTagDTO memberTagDTO) {
         log.debug("Request to update MemberTag : {}", memberTagDTO);
-        return memberTagRepository.save(memberTagMapper.toEntity(memberTagDTO)).map(memberTagMapper::toDto);
+
+        return userService
+            .getUserWithAuthorities()
+            .flatMap(user -> {
+                Instant timeStamp = (new Date()).toInstant();
+                memberTagDTO.setUpdatedBy(user.getId());
+                memberTagDTO.setUpdatedOn(timeStamp);
+
+                return memberTagRepository.save(memberTagMapper.toEntity(memberTagDTO)).map(memberTagMapper::toDto);
+            });
     }
 
     @Override
     public Mono<MemberTagDTO> partialUpdate(MemberTagDTO memberTagDTO) {
         log.debug("Request to partially update MemberTag : {}", memberTagDTO);
 
-        return memberTagRepository
-            .findById(memberTagDTO.getId())
-            .map(existingMemberTag -> {
-                memberTagMapper.partialUpdate(existingMemberTag, memberTagDTO);
+        return userService
+            .getUserWithAuthorities()
+            .flatMap(user -> {
+                Instant timeStamp = (new Date()).toInstant();
+                memberTagDTO.setUpdatedBy(user.getId());
+                memberTagDTO.setUpdatedOn(timeStamp);
 
-                return existingMemberTag;
-            })
-            .flatMap(memberTagRepository::save)
-            .map(memberTagMapper::toDto);
+                return memberTagRepository
+                    .findById(memberTagDTO.getId())
+                    .map(existingMemberTag -> {
+                        memberTagMapper.partialUpdate(existingMemberTag, memberTagDTO);
+
+                        return existingMemberTag;
+                    })
+                    .flatMap(memberTagRepository::save)
+                    .map(memberTagMapper::toDto);
+            });
     }
 
     @Override
