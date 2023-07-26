@@ -8,117 +8,143 @@
       <div>
         <jhi-alert-error></jhi-alert-error>
 
-        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
-          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
-          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
-        </div>
+        <div *jhiHasAnyAuthority="'ROLE_ADMIN'">
+          <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
 
-        <div class="mb-3">
-          <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.createdBy" for="field_createdBy">Created By</label>
-          <input type="number" class="form-control" name="createdBy" id="field_createdBy" data-cy="createdBy" formControlName="createdBy" />
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.createdOn" for="field_createdOn">Created On</label>
-          <div class="d-flex">
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.createdBy" for="field_createdBy">Created By</label>
             <input
-              id="field_createdOn"
-              data-cy="createdOn"
-              type="datetime-local"
+              type="number"
               class="form-control"
-              name="createdOn"
-              formControlName="createdOn"
-              placeholder="YYYY-MM-DD HH:mm"
+              name="createdBy"
+              id="field_createdBy"
+              data-cy="createdBy"
+              formControlName="createdBy"
             />
           </div>
-        </div>
 
-        <div class="mb-3">
-          <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.updatedBy" for="field_updatedBy">Updated By</label>
-          <input type="number" class="form-control" name="updatedBy" id="field_updatedBy" data-cy="updatedBy" formControlName="updatedBy" />
-        </div>
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.createdOn" for="field_createdOn">Created On</label>
+            <div class="d-flex">
+              <input
+                id="field_createdOn"
+                data-cy="createdOn"
+                type="datetime-local"
+                class="form-control"
+                name="createdOn"
+                formControlName="createdOn"
+                placeholder="YYYY-MM-DD HH:mm"
+              />
+            </div>
+          </div>
 
-        <div class="mb-3">
-          <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.updatedOn" for="field_updatedOn">Updated On</label>
-          <div class="d-flex">
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.updatedBy" for="field_updatedBy">Updated By</label>
             <input
-              id="field_updatedOn"
-              data-cy="updatedOn"
-              type="datetime-local"
+              type="number"
               class="form-control"
-              name="updatedOn"
-              formControlName="updatedOn"
-              placeholder="YYYY-MM-DD HH:mm"
+              name="updatedBy"
+              id="field_updatedBy"
+              data-cy="updatedBy"
+              formControlName="updatedBy"
             />
           </div>
-        </div>
 
-        <div class="mb-3">
-          <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.deletedBy" for="field_deletedBy">Deleted By</label>
-          <input type="number" class="form-control" name="deletedBy" id="field_deletedBy" data-cy="deletedBy" formControlName="deletedBy" />
-        </div>
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.updatedOn" for="field_updatedOn">Updated On</label>
+            <div class="d-flex">
+              <input
+                id="field_updatedOn"
+                data-cy="updatedOn"
+                type="datetime-local"
+                class="form-control"
+                name="updatedOn"
+                formControlName="updatedOn"
+                placeholder="YYYY-MM-DD HH:mm"
+              />
+            </div>
+          </div>
 
-        <div class="mb-3">
-          <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.deletedOn" for="field_deletedOn">Deleted On</label>
-          <div class="d-flex">
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.deletedBy" for="field_deletedBy">Deleted By</label>
             <input
-              id="field_deletedOn"
-              data-cy="deletedOn"
-              type="datetime-local"
+              type="number"
               class="form-control"
-              name="deletedOn"
-              formControlName="deletedOn"
-              placeholder="YYYY-MM-DD HH:mm"
+              name="deletedBy"
+              id="field_deletedBy"
+              data-cy="deletedBy"
+              formControlName="deletedBy"
             />
           </div>
-        </div>
 
-        <div class="mb-3">
-          <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.description" for="field_description">Description</label>
-          <input
-            type="text"
-            class="form-control"
-            name="description"
-            id="field_description"
-            data-cy="description"
-            formControlName="description"
-          />
-          <div *ngIf="editForm.get('description')!.invalid && (editForm.get('description')!.dirty || editForm.get('description')!.touched)">
-            <small
-              class="form-text text-danger"
-              *ngIf="editForm.get('description')?.errors?.required"
-              jhiTranslate="entity.validation.required"
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.deletedOn" for="field_deletedOn">Deleted On</label>
+            <div class="d-flex">
+              <input
+                id="field_deletedOn"
+                data-cy="deletedOn"
+                type="datetime-local"
+                class="form-control"
+                name="deletedOn"
+                formControlName="deletedOn"
+                placeholder="YYYY-MM-DD HH:mm"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.description" for="field_description">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              name="description"
+              id="field_description"
+              data-cy="description"
+              formControlName="description"
+            />
+            <div
+              *ngIf="editForm.get('description')!.invalid && (editForm.get('description')!.dirty || editForm.get('description')!.touched)"
             >
-              O campo é obrigatório.
-            </small>
+              <small
+                class="form-text text-danger"
+                *ngIf="editForm.get('description')?.errors?.required"
+                jhiTranslate="entity.validation.required"
+              >
+                O campo é obrigatório.
+              </small>
+            </div>
           </div>
-        </div>
 
-        <div class="mb-3">
-          <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.restricted" for="field_restricted">Restricted</label>
-          <input
-            type="checkbox"
-            class="form-check"
-            name="restricted"
-            id="field_restricted"
-            data-cy="restricted"
-            formControlName="restricted"
-          />
-        </div>
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.restricted" for="field_restricted">Restricted</label>
+            <input
+              type="checkbox"
+              class="form-check"
+              name="restricted"
+              id="field_restricted"
+              data-cy="restricted"
+              formControlName="restricted"
+            />
+          </div>
 
-        <div class="mb-3">
-          <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.defaultTag" for="field_defaultTag">Default Tag</label>
-          <select
-            class="form-control"
-            id="field_defaultTag"
-            data-cy="defaultTag"
-            name="defaultTag"
-            formControlName="defaultTag"
-            [compareWith]="compareTag"
-          >
-            <option [ngValue]="null"></option>
-            <option [ngValue]="tagOption" *ngFor="let tagOption of tagsSharedCollection">{{ tagOption.description }}</option>
-          </select>
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="mngmtInstitunaApp.tagType.defaultTag" for="field_defaultTag">Default Tag</label>
+            <select
+              class="form-control"
+              id="field_defaultTag"
+              data-cy="defaultTag"
+              name="defaultTag"
+              formControlName="defaultTag"
+              [compareWith]="compareTag"
+            >
+              <option [ngValue]="null"></option>
+              <option [ngValue]="tagOption" *ngFor="let tagOption of tagsSharedCollection">{{ tagOption.description }}</option>
+            </select>
+          </div>
         </div>
       </div>
 

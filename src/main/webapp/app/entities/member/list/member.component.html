@@ -32,67 +32,71 @@
     <table class="table table-striped" aria-describedby="page-heading">
       <thead>
         <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
-          <th scope="col" jhiSortBy="id">
-            <div class="d-flex">
-              <span jhiTranslate="global.field.id">Código</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="createdBy">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.member.createdBy">Created By</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="createdOn">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.member.createdOn">Created On</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="updatedBy">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.member.updatedBy">Updated By</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="updatedOn">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.member.updatedOn">Updated On</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="deletedBy">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.member.deletedBy">Deleted By</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="deletedOn">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.member.deletedOn">Deleted On</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="nickname">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.member.nickname">Nickname</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="birthday">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.member.birthday">Birthday</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="user.id">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.member.user">User</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col"></th>
+          <ng-container *jhiHasAnyAuthority="'ROLE_ADMIN'">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">Código</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="createdBy">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.member.createdBy">Created By</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="createdOn">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.member.createdOn">Created On</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="updatedBy">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.member.updatedBy">Updated By</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="updatedOn">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.member.updatedOn">Updated On</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="deletedBy">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.member.deletedBy">Deleted By</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="deletedOn">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.member.deletedOn">Deleted On</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+          </ng-container>
+          <ng-container>
+            <th scope="col" jhiSortBy="nickname">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.member.nickname">Nickname</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="birthday">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.member.birthday">Birthday</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="user.id">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.member.user">User</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </ng-container>
         </tr>
       </thead>
       <tbody
@@ -102,38 +106,53 @@
         [infiniteScrollDistance]="0"
       >
         <tr *ngFor="let member of members; trackBy: trackId" data-cy="entityTable">
-          <td>
-            <a [routerLink]="['/member', member.id, 'view']">{{ member.id }}</a>
-          </td>
-          <td>{{ member.createdBy }}</td>
-          <td>{{ member.createdOn | formatMediumDatetime }}</td>
-          <td>{{ member.updatedBy }}</td>
-          <td>{{ member.updatedOn | formatMediumDatetime }}</td>
-          <td>{{ member.deletedBy }}</td>
-          <td>{{ member.deletedOn | formatMediumDatetime }}</td>
-          <td>{{ member.nickname }}</td>
-          <td>{{ member.birthday | formatMediumDate }}</td>
-          <td>
-            {{ member.user?.id }}
-          </td>
-          <td class="text-end">
-            <div class="btn-group">
-              <button type="submit" [routerLink]="['/member', member.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
-                <fa-icon icon="eye"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Visualizar</span>
-              </button>
+          <ng-container *jhiHasAnyAuthority="'ROLE_ADMIN'">
+            <td>
+              <a [routerLink]="['/member', member.id, 'view']">{{ member.id }}</a>
+            </td>
+            <td>{{ member.createdBy }}</td>
+            <td>{{ member.createdOn | formatMediumDatetime }}</td>
+            <td>{{ member.updatedBy }}</td>
+            <td>{{ member.updatedOn | formatMediumDatetime }}</td>
+            <td>{{ member.deletedBy }}</td>
+            <td>{{ member.deletedOn | formatMediumDatetime }}</td>
+          </ng-container>
+          <ng-container>
+            <td>{{ member.nickname }}</td>
+            <td>{{ member.birthday | formatMediumDate }}</td>
+            <td>
+              {{ member.user?.id }}
+            </td>
 
-              <button type="submit" [routerLink]="['/member', member.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
-                <fa-icon icon="pencil-alt"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
-              </button>
+            <td class="text-end">
+              <div class="btn-group">
+                <button
+                  type="submit"
+                  [routerLink]="['/member', member.id, 'view']"
+                  class="btn btn-info btn-sm"
+                  data-cy="entityDetailsButton"
+                >
+                  <fa-icon icon="eye"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Visualizar</span>
+                </button>
 
-              <button type="submit" (click)="delete(member)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
-                <fa-icon icon="times"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Eliminar</span>
-              </button>
-            </div>
-          </td>
+                <button
+                  type="submit"
+                  [routerLink]="['/member', member.id, 'edit']"
+                  class="btn btn-primary btn-sm"
+                  data-cy="entityEditButton"
+                >
+                  <fa-icon icon="pencil-alt"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
+                </button>
+
+                <button type="submit" (click)="delete(member)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                  <fa-icon icon="times"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Eliminar</span>
+                </button>
+              </div>
+            </td>
+          </ng-container>
         </tr>
       </tbody>
     </table>

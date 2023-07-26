@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
 
 import SharedModule from 'app/shared/shared.module';
+import HasAnyAuthorityDirective from 'app/shared/auth/has-any-authority.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MemberFormService, MemberFormGroup } from './member-form.service';
@@ -17,7 +18,7 @@ import { UserService } from 'app/entities/user/user.service';
   standalone: true,
   selector: 'jhi-member-update',
   templateUrl: './member-update.component.html',
-  imports: [SharedModule, FormsModule, ReactiveFormsModule],
+  imports: [SharedModule, HasAnyAuthorityDirective, FormsModule, ReactiveFormsModule],
 })
 export class MemberUpdateComponent implements OnInit {
   isSaving = false;

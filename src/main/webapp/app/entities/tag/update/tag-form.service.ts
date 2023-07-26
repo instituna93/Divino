@@ -60,12 +60,12 @@ export class TagFormService {
           validators: [Validators.required],
         }
       ),
-      createdBy: new FormControl(tagRawValue.createdBy),
-      createdOn: new FormControl(tagRawValue.createdOn),
-      updatedBy: new FormControl(tagRawValue.updatedBy),
-      updatedOn: new FormControl(tagRawValue.updatedOn),
-      deletedBy: new FormControl(tagRawValue.deletedBy),
-      deletedOn: new FormControl(tagRawValue.deletedOn),
+      createdBy: new FormControl({ value: tagRawValue.createdBy, disabled: true }),
+      createdOn: new FormControl({ value: tagRawValue.createdOn, disabled: true }),
+      updatedBy: new FormControl({ value: tagRawValue.updatedBy, disabled: true }),
+      updatedOn: new FormControl({ value: tagRawValue.updatedOn, disabled: true }),
+      deletedBy: new FormControl({ value: tagRawValue.deletedBy, disabled: true }),
+      deletedOn: new FormControl({ value: tagRawValue.deletedOn, disabled: true }),
       description: new FormControl(tagRawValue.description, {
         validators: [Validators.required],
       }),

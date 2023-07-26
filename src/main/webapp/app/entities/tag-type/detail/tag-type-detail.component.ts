@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
 import SharedModule from 'app/shared/shared.module';
+import HasAnyAuthorityDirective from 'app/shared/auth/has-any-authority.directive';
 import { DurationPipe, FormatMediumDatetimePipe, FormatMediumDatePipe } from 'app/shared/date';
 import { ITagType } from '../tag-type.model';
 
@@ -9,7 +10,7 @@ import { ITagType } from '../tag-type.model';
   standalone: true,
   selector: 'jhi-tag-type-detail',
   templateUrl: './tag-type-detail.component.html',
-  imports: [SharedModule, RouterModule, DurationPipe, FormatMediumDatetimePipe, FormatMediumDatePipe],
+  imports: [RouterModule, SharedModule, HasAnyAuthorityDirective, DurationPipe, FormatMediumDatetimePipe, FormatMediumDatePipe],
 })
 export class TagTypeDetailComponent {
   @Input() tagType: ITagType | null = null;

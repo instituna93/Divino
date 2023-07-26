@@ -32,67 +32,71 @@
     <table class="table table-striped" aria-describedby="page-heading">
       <thead>
         <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
-          <th scope="col" jhiSortBy="id">
-            <div class="d-flex">
-              <span jhiTranslate="global.field.id">Código</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="createdBy">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.tagType.createdBy">Created By</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="createdOn">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.tagType.createdOn">Created On</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="updatedBy">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.tagType.updatedBy">Updated By</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="updatedOn">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.tagType.updatedOn">Updated On</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="deletedBy">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.tagType.deletedBy">Deleted By</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="deletedOn">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.tagType.deletedOn">Deleted On</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="description">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.tagType.description">Description</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="restricted">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.tagType.restricted">Restricted</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="defaultTag.description">
-            <div class="d-flex">
-              <span jhiTranslate="mngmtInstitunaApp.tagType.defaultTag">Default Tag</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col"></th>
+          <ng-container *jhiHasAnyAuthority="'ROLE_ADMIN'">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">Código</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="createdBy">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.tagType.createdBy">Created By</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="createdOn">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.tagType.createdOn">Created On</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="updatedBy">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.tagType.updatedBy">Updated By</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="updatedOn">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.tagType.updatedOn">Updated On</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="deletedBy">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.tagType.deletedBy">Deleted By</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="deletedOn">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.tagType.deletedOn">Deleted On</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+          </ng-container>
+          <ng-container>
+            <th scope="col" jhiSortBy="description">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.tagType.description">Description</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="restricted">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.tagType.restricted">Restricted</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="defaultTag.description">
+              <div class="d-flex">
+                <span jhiTranslate="mngmtInstitunaApp.tagType.defaultTag">Default Tag</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </ng-container>
         </tr>
       </thead>
       <tbody
@@ -102,50 +106,54 @@
         [infiniteScrollDistance]="0"
       >
         <tr *ngFor="let tagType of tagTypes; trackBy: trackId" data-cy="entityTable">
-          <td>
-            <a [routerLink]="['/tag-type', tagType.id, 'view']">{{ tagType.id }}</a>
-          </td>
-          <td>{{ tagType.createdBy }}</td>
-          <td>{{ tagType.createdOn | formatMediumDatetime }}</td>
-          <td>{{ tagType.updatedBy }}</td>
-          <td>{{ tagType.updatedOn | formatMediumDatetime }}</td>
-          <td>{{ tagType.deletedBy }}</td>
-          <td>{{ tagType.deletedOn | formatMediumDatetime }}</td>
-          <td>{{ tagType.description }}</td>
-          <td>{{ tagType.restricted }}</td>
-          <td>
-            <div *ngIf="tagType.defaultTag">
-              <a [routerLink]="['/tag', tagType.defaultTag.id, 'view']">{{ tagType.defaultTag.description }}</a>
-            </div>
-          </td>
-          <td class="text-end">
-            <div class="btn-group">
-              <button
-                type="submit"
-                [routerLink]="['/tag-type', tagType.id, 'view']"
-                class="btn btn-info btn-sm"
-                data-cy="entityDetailsButton"
-              >
-                <fa-icon icon="eye"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Visualizar</span>
-              </button>
+          <ng-container *jhiHasAnyAuthority="'ROLE_ADMIN'">
+            <td>
+              <a [routerLink]="['/tag-type', tagType.id, 'view']">{{ tagType.id }}</a>
+            </td>
+            <td>{{ tagType.createdBy }}</td>
+            <td>{{ tagType.createdOn | formatMediumDatetime }}</td>
+            <td>{{ tagType.updatedBy }}</td>
+            <td>{{ tagType.updatedOn | formatMediumDatetime }}</td>
+            <td>{{ tagType.deletedBy }}</td>
+            <td>{{ tagType.deletedOn | formatMediumDatetime }}</td>
+          </ng-container>
+          <ng-container>
+            <td>{{ tagType.description }}</td>
+            <td>{{ tagType.restricted }}</td>
+            <td>
+              <div *ngIf="tagType.defaultTag">
+                <a [routerLink]="['/tag', tagType.defaultTag.id, 'view']">{{ tagType.defaultTag.description }}</a>
+              </div>
+            </td>
+            <td class="text-end">
+              <div class="btn-group">
+                <button
+                  type="submit"
+                  [routerLink]="['/tag-type', tagType.id, 'view']"
+                  class="btn btn-info btn-sm"
+                  data-cy="entityDetailsButton"
+                >
+                  <fa-icon icon="eye"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Visualizar</span>
+                </button>
 
-              <button
-                type="submit"
-                [routerLink]="['/tag-type', tagType.id, 'edit']"
-                class="btn btn-primary btn-sm"
-                data-cy="entityEditButton"
-              >
-                <fa-icon icon="pencil-alt"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
-              </button>
+                <button
+                  type="submit"
+                  [routerLink]="['/tag-type', tagType.id, 'edit']"
+                  class="btn btn-primary btn-sm"
+                  data-cy="entityEditButton"
+                >
+                  <fa-icon icon="pencil-alt"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
+                </button>
 
-              <button type="submit" (click)="delete(tagType)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
-                <fa-icon icon="times"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Eliminar</span>
-              </button>
-            </div>
-          </td>
+                <button type="submit" (click)="delete(tagType)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                  <fa-icon icon="times"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Eliminar</span>
+                </button>
+              </div>
+            </td>
+          </ng-container>
         </tr>
       </tbody>
     </table>

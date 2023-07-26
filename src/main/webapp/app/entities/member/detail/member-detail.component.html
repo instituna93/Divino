@@ -9,7 +9,7 @@
 
       <jhi-alert></jhi-alert>
 
-      <dl class="row-md jh-entity-details">
+      <dl *jhiHasAnyAuthority="'ROLE_ADMIN'" class="row-md jh-entity-details">
         <dt><span jhiTranslate="global.field.id">Código</span></dt>
         <dd>
           <span>{{ member.id }}</span>
@@ -38,6 +38,8 @@
         <dd>
           <span>{{ member.deletedOn | formatMediumDatetime }}</span>
         </dd>
+      </dl>
+      <dl class="row-md jh-entity-details">
         <dt><span jhiTranslate="mngmtInstitunaApp.member.nickname">Nickname</span></dt>
         <dd>
           <span>{{ member.nickname }}</span>
