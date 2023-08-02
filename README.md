@@ -21,6 +21,15 @@ npm install -g generator-jhipster
 
 ## Project Startup
 
+Copiar o projeto e instalar dependencias:
+
+```
+mkdir /var/mngmt-instituna
+cd /var/mngmt-instituna
+git clone https://github.com/instituna93/mngmt-instituna.git .
+npm install
+```
+
 Para arrancar o projeto correr este comando:
 
 ```
