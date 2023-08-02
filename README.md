@@ -1,30 +1,87 @@
 # MngmtInstituna
 
-Altera��es � BD:
-alterar o ficheiro: jhipster-jdl_db.jdl
-executar comando: jhipster jdl jhipster-jdl_db.jdl
+## Environment Setup
 
-Se for uma tabela de dados estaticos, podem criar um ficheiro com dados aqui:
-para aqui: \src\main\resources\config\liquibase\data
+Antes de começar a trabalhar no projeto é necessário instalar:
 
-e adicionar a importa��o dos dados aqui: \src\main\resources\config\liquibase\changelog\20230726063807_added_data.xml
-ou num novo ficheiro, que nesse caso deve estar referenciado aqui: \src\main\resources\config\liquibase
+- JDK17 - https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+- Node.js e npm - https://nodejs.org/en/download
 
-Podem ter que apagar a pasta para fazer reset a BD local de testes: \target\h2db
+```
+choco install nodejs-lts -y
+node -v
+npm -v
+```
+
+- JHipster - https://www.jhipster.tech/installation/
+
+```
+npm install -g generator-jhipster
+```
+
+## Project Startup
+
+Para arrancar o projeto correr este comando:
+
+```
+mvnw
+```
+
+Ele cria automaticamente uma base de dados local de testes em H2: `\target\h2db`
+E arranca o projeto em `http://localhost:8080/`
+
+Atualmente existem 3 contas de utilizador criadas no site, para usar e fazer testes, cada uma com permissões diferentes:
+
+- Administrador (utilizador="admin" e palavra-passe="admin")
+- Direcao (utilizador="direcao" e palavra-passe="direcao")
+- Utilizador (utilizador="user" e palavra-passe="user").
+
+## Database Structure Changes
+
+Para fazer alterações á BD, pode-se seguir o modelo de JDL: `jhipster-jdl_db.jdl`
+
+Deve-se usar um novo ficheiro com as tabelas a serem criadas, pois usando o mesmo, ele volta a criar as entidades que já foram criadas e alteradas, dando assim rollback as alterações que já foram feitas ao projeto.
+Exemplo:
+
+```
+entity Teste {
+	istoEUmTeste String
+}
+paginate Teste with infinite-scroll
+service Teste with serviceImpl
+dto Teste with mapstruct
+```
+
+Aps criao de um novo ficheiro JDL, ele pode ser importado com o seguinte comando: `jhipster jdl jhipster-jdl_TesteTable.jdl`
+
+Com isto, o JHipster cria automaticamente varios documentos:
+
+- Estrutura da tabela (`\.jhipster\Teste.json`)
+- Script criação da tabela em Liquibase (`\src\main\resources\config\liquibase\changelog\YYYYMMDDHHmmSS_added_entity_Teste.xml`)
+- Inclusao do Script Liquibase no master do Liquibase (`\src\main\resources\config\liquibase\master.xml`)
+- Modelo Java (`\src\main\java\com\instituna\domain\Teste.java`)
+- Helpers SQL (`\src\main\java\com\instituna\repository\TesteSqlHelper.java` & `\src\main\java\com\instituna\repository\rowmapper\TesteRowMapper.java`)
+- Repositorios/CRUD DB (`\src\main\java\com\instituna\repository\TesteRepository.java` & `\src\main\java\com\instituna\repository\TesteRepositoryInternalImpl.java`)
+- Serviço Controller (`\src\main\java\com\instituna\service\TesteService.java` & `\src\main\java\com\instituna\service\impl\TesteServiceImpl.java`)
+- DTO e Mapper (`\src\main\java\com\instituna\service\dto\TesteDTO.java` & `\src\main\java\com\instituna\service\mapper\TesteMapper.java`)
+- Serviço REST (`\src\main\java\com\instituna\web\rest\TesteResource.java`)
+- Testes Java
+- Angular - Cria tambem um conjunto de paginas e controladores em angular para listar, criar, editar e apagar esta entidade (`\src\main\webapp\app\entities\teste\*`)
+
+## Static data/Test data
+
+Atualmente o faker est disabled, para ativar, pode-se alterar o campo `skipFakeData` no ficheiro `.yo-rc.json`
+Quando est ativo, o faker cria uma tabela de dados ficticios que pode ser util para fazer testes, sem ter que estar sempre a adicionar dados BD de arranque (`\src\main\resources\config\liquibase\fake-data\teste.csv`)
+
+O fake data no deve ser usado para dados estticos (Como por exemplo roles, ou tags), nesse caso deve-se adicionar uma tabela de dados aqui (`\src\main\resources\config\liquibase\data\*`)
+Ao adicionar essa tabela de dados, necessrio fazer o carregamento desses dados para a tabela correspondente: (`\src\main\resources\config\liquibase\changelog\99999999999999_added_data.xml`)
+Dados estticos que sejam relacionados, tm que ser inseridos em changesets diferentes.
+
+Quando fizerem alteraes aos ficheiros Liquibase, podem ter que apagar a BD local de testes: `\target\h2db`
 
 ## Project Structure
 
 Node is required for generation and recommended for development. `package.json` is always generated for a better development experience with prettier, commit hooks, scripts and so on.
-
-In the project root, JHipster generates configuration files for tools like git, prettier, eslint, husky, and others that are well known and you can find references in the web.
-
-`/src/*` structure follows default Java structure.
-
-- `.yo-rc.json` - Yeoman configuration file
-  JHipster configuration is stored in this file at `generator-jhipster` key. You may find `generator-jhipster-*` for specific blueprints configuration.
-- `.yo-resolve` (optional) - Yeoman conflict resolver
-  Allows to use a specific action when conflicts are found skipping prompts for files that matches a pattern. Each line should match `[pattern] [action]` with pattern been a [Minimatch](https://github.com/isaacs/minimatch#minimatch) pattern and action been one of skip (default if ommited) or force. Lines starting with `#` are considered comments and are ignored.
-- `.jhipster/*.json` - JHipster entity configuration files
 
 - `npmw` - wrapper to use locally installed npm.
   JHipster installs Node and npm locally using the build tool by default. This wrapper makes sure npm is installed locally and uses it avoiding some differences different versions can cause. By using `./npmw` instead of the traditional `npm` you can configure a Node-less environment to develop or test your application.
@@ -32,12 +89,6 @@ In the project root, JHipster generates configuration files for tools like git, 
 
 ## Development
 
-Before you can build this project, you must install and configure the following dependencies on your machine:
-
-1. [Node.js][]: We use Node to run a development web server and build the project.
-   Depending on your system, you can install Node either from source or as a pre-packaged bundle.
-
-After installing Node, you should be able to run the following command to install development tools.
 You will only need to run this command when dependencies change in [package.json](package.json).
 
 ```
