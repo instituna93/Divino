@@ -9,7 +9,7 @@
     <!--
         Added data.
     -->
-    <changeSet id="20230726063807-1" author="jhipster">
+    <changeSet id="99999999999999-1" author="jhipster">
         <loadData
                   file="config/liquibase/data/member.csv"
                   separator=";"
@@ -41,7 +41,7 @@
             <column name="deleted_on" type="date"/>
         </loadData>
     </changeSet>
-    <changeSet id="20230726063807-2" author="jhipster">
+    <changeSet id="99999999999999-2" author="jhipster">
         <loadData
                   file="config/liquibase/data/tag.csv"
                   separator=";"
@@ -58,7 +58,7 @@
             <column name="deleted_on" type="date"/>
         </loadData>
     </changeSet>
-    <changeSet id="20230726063807-3" author="jhipster">
+    <changeSet id="99999999999999-3" author="jhipster">
         <loadData
                   file="config/liquibase/data/member_tag.csv"
                   separator=";"
