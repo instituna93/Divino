@@ -34,22 +34,22 @@ spring:
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: prod
-    url: jdbc:postgresql://localhost:5432/MngmtInstituna
+    url: jdbc:postgresql://localhost:5432/Divino
   mail:
     host: localhost
     port: 25
     username:
     password:
   r2dbc:
-    url: r2dbc:postgresql://localhost:5432/MngmtInstituna
-    username: MngmtInstituna
+    url: r2dbc:postgresql://localhost:5432/Divino
+    username: Divino
     password:
   thymeleaf:
     cache: true
 
 # ===================================================================
 # To enable TLS in production, generate a certificate using:
-# keytool -genkey -alias mngmtinstituna -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+# keytool -genkey -alias divino -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 #
 # You can also use Let's Encrypt:
 # See details in topic "Create a Java Keystore (.JKS) from Let's Encrypt Certificates" on https://maximilian-boehm.com/en-gb/blog

@@ -3,7 +3,7 @@ package com.instituna.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * Properties specific to Mngmt Instituna.
+ * Properties specific to Divino.
  * <p>
  * Properties are configured in the {@code application.yml} file.
  * See {@link tech.jhipster.config.JHipsterProperties} for a good example.

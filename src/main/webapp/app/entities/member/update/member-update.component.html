@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-      <h2 id="jhi-member-heading" data-cy="MemberCreateUpdateHeading" jhiTranslate="mngmtInstitunaApp.member.home.createOrEditLabel">
+      <h2 id="jhi-member-heading" data-cy="MemberCreateUpdateHeading" jhiTranslate="divinoApp.member.home.createOrEditLabel">
         Criar ou editar Member
       </h2>
 
@@ -15,7 +15,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.member.createdBy" for="field_createdBy">Created By</label>
+            <label class="form-label" jhiTranslate="divinoApp.member.createdBy" for="field_createdBy">Created By</label>
             <input
               type="number"
               class="form-control"
@@ -28,7 +28,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.member.createdOn" for="field_createdOn">Created On</label>
+            <label class="form-label" jhiTranslate="divinoApp.member.createdOn" for="field_createdOn">Created On</label>
             <div class="d-flex">
               <input
                 id="field_createdOn"
@@ -44,7 +44,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.member.updatedBy" for="field_updatedBy">Updated By</label>
+            <label class="form-label" jhiTranslate="divinoApp.member.updatedBy" for="field_updatedBy">Updated By</label>
             <input
               type="number"
               class="form-control"
@@ -57,7 +57,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.member.updatedOn" for="field_updatedOn">Updated On</label>
+            <label class="form-label" jhiTranslate="divinoApp.member.updatedOn" for="field_updatedOn">Updated On</label>
             <div class="d-flex">
               <input
                 id="field_updatedOn"
@@ -73,7 +73,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.member.deletedBy" for="field_deletedBy">Deleted By</label>
+            <label class="form-label" jhiTranslate="divinoApp.member.deletedBy" for="field_deletedBy">Deleted By</label>
             <input
               type="number"
               class="form-control"
@@ -86,7 +86,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.member.deletedOn" for="field_deletedOn">Deleted On</label>
+            <label class="form-label" jhiTranslate="divinoApp.member.deletedOn" for="field_deletedOn">Deleted On</label>
             <div class="d-flex">
               <input
                 id="field_deletedOn"
@@ -103,12 +103,12 @@
         </div>
         <div>
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.member.nickname" for="field_nickname">Nickname</label>
+            <label class="form-label" jhiTranslate="divinoApp.member.nickname" for="field_nickname">Nickname</label>
             <input type="text" class="form-control" name="nickname" id="field_nickname" data-cy="nickname" formControlName="nickname" />
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.member.birthday" for="field_birthday">Birthday</label>
+            <label class="form-label" jhiTranslate="divinoApp.member.birthday" for="field_birthday">Birthday</label>
             <div class="input-group">
               <input
                 id="field_birthday"
@@ -125,7 +125,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.member.user" for="field_user">User</label>
+            <label class="form-label" jhiTranslate="divinoApp.member.user" for="field_user">User</label>
             <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user" [compareWith]="compareUser">
               <option [ngValue]="null"></option>
               <option [ngValue]="userOption" *ngFor="let userOption of usersSharedCollection">{{ userOption.login }}</option>

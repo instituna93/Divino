@@ -1,8 +1,8 @@
-# MngmtInstituna
+# Divino
 
 ## Environment Setup
 
-Antes de come√ßar a trabalhar no projeto √© necess√°rio instalar:
+Antes de comeÁar a trabalhar no projeto È necess·rio instalar:
 
 - JDK17 - https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
 - Node.js e npm - https://nodejs.org/en/download
@@ -41,12 +41,11 @@ E arranca o projeto em `http://localhost:8080/`
 
 ```
 ----------------------------------------------------------
-        Application 'MngmtInstituna' is running! Access URLs:
         Local:          http://localhost:8080/
 ----------------------------------------------------------
 ```
 
-Atualmente existem 3 contas de utilizador criadas no site, para usar e fazer testes, cada uma com permiss√µes diferentes:
+Atualmente existem 3 contas de utilizador criadas no site, para usar e fazer testes, cada uma com permissıes diferentes:
 
 - Administrador (utilizador="admin" e palavra-passe="admin")
 - Direcao (utilizador="direcao" e palavra-passe="direcao")
@@ -54,9 +53,9 @@ Atualmente existem 3 contas de utilizador criadas no site, para usar e fazer tes
 
 ## Database Structure Changes
 
-Para fazer altera√ß√µes √° BD, pode-se seguir o modelo de JDL: `jhipster-jdl_db.jdl`
+Para fazer alteraÁıes · BD, pode-se seguir o modelo de JDL: `jhipster-jdl_db.jdl`
 
-Deve-se usar um novo ficheiro com as tabelas a serem criadas, pois usando o mesmo, ele volta a criar as entidades que j√° foram criadas e alteradas, dando assim rollback as altera√ß√µes que j√° foram feitas ao projeto.
+Deve-se usar um novo ficheiro com as tabelas a serem criadas, pois usando o mesmo, ele volta a criar as entidades que j· foram criadas e alteradas, dando assim rollback as alteraÁıes que j· foram feitas ao projeto.
 Exemplo:
 
 ```
@@ -73,14 +72,14 @@ Aps criao de um novo ficheiro JDL, ele pode ser importado com o seguinte comando
 Com isto, o JHipster cria automaticamente varios documentos:
 
 - Estrutura da tabela (`\.jhipster\Teste.json`)
-- Script cria√ß√£o da tabela em Liquibase (`\src\main\resources\config\liquibase\changelog\YYYYMMDDHHmmSS_added_entity_Teste.xml`)
+- Script criaÁ„o da tabela em Liquibase (`\src\main\resources\config\liquibase\changelog\YYYYMMDDHHmmSS_added_entity_Teste.xml`)
 - Inclusao do Script Liquibase no master do Liquibase (`\src\main\resources\config\liquibase\master.xml`)
 - Modelo Java (`\src\main\java\com\instituna\domain\Teste.java`)
 - Helpers SQL (`\src\main\java\com\instituna\repository\TesteSqlHelper.java` & `\src\main\java\com\instituna\repository\rowmapper\TesteRowMapper.java`)
 - Repositorios/CRUD DB (`\src\main\java\com\instituna\repository\TesteRepository.java` & `\src\main\java\com\instituna\repository\TesteRepositoryInternalImpl.java`)
-- Servi√ßo Controller (`\src\main\java\com\instituna\service\TesteService.java` & `\src\main\java\com\instituna\service\impl\TesteServiceImpl.java`)
+- ServiÁo Controller (`\src\main\java\com\instituna\service\TesteService.java` & `\src\main\java\com\instituna\service\impl\TesteServiceImpl.java`)
 - DTO e Mapper (`\src\main\java\com\instituna\service\dto\TesteDTO.java` & `\src\main\java\com\instituna\service\mapper\TesteMapper.java`)
-- Servi√ßo REST (`\src\main\java\com\instituna\web\rest\TesteResource.java`)
+- ServiÁo REST (`\src\main\java\com\instituna\web\rest\TesteResource.java`)
 - Testes Java
 - Angular - Cria tambem um conjunto de paginas e controladores em angular para listar, criar, editar e apagar esta entidade (`\src\main\webapp\app\entities\teste\*`)
 
@@ -109,7 +108,7 @@ If you wish to have angular live-reload, you can start a separate instance of th
 npm start
 ```
 
-Ele arranca uma instancia do angular com live-reload ligado √° instancia de back-end em `http://localhost:9000`
+Ele arranca uma instancia do angular com live-reload ligado · instancia de back-end em `http://localhost:9000`
 
 ```
  -------------------------------------
@@ -151,7 +150,7 @@ docker compose -f src/main/docker/jhipster-control-center.yml up
 
 ### Packaging as jar
 
-To build the final jar and optimize the MngmtInstituna application for production, run:
+To build the final jar and optimize the Divino application for production, run:
 
 ```
 ./mvnw -Pprod clean verify

@@ -21,18 +21,18 @@ import tech.jhipster.config.JHipsterConstants;
 
 @SpringBootApplication
 @EnableConfigurationProperties({ LiquibaseProperties.class, ApplicationProperties.class })
-public class MngmtInstitunaApp {
+public class DivinoApp {
 
-    private static final Logger log = LoggerFactory.getLogger(MngmtInstitunaApp.class);
+    private static final Logger log = LoggerFactory.getLogger(DivinoApp.class);
 
     private final Environment env;
 
-    public MngmtInstitunaApp(Environment env) {
+    public DivinoApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes MngmtInstituna.
+     * Initializes Divino.
      * <p>
      * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
      * <p>
@@ -65,7 +65,7 @@ public class MngmtInstitunaApp {
      * @param args the command line arguments.
      */
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(MngmtInstitunaApp.class);
+        SpringApplication app = new SpringApplication(DivinoApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);
@@ -89,12 +89,10 @@ public class MngmtInstitunaApp {
             """
 
                 ----------------------------------------------------------
-                \tApplication '{}' is running! Access URLs:
                 \tLocal: \t\t{}://localhost:{}{}
                 \tExternal: \t{}://{}:{}{}
                 \tProfile(s): \t{}
                 ----------------------------------------------------------""",
-            env.getProperty("spring.application.name"),
             protocol,
             serverPort,
             contextPath,

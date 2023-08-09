@@ -14,7 +14,7 @@ import org.springframework.test.annotation.DirtiesContext;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@SpringBootTest(classes = { MngmtInstitunaApp.class, AsyncSyncConfiguration.class })
+@SpringBootTest(classes = { DivinoApp.class, AsyncSyncConfiguration.class })
 @EmbeddedSQL
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 public @interface IntegrationTest {

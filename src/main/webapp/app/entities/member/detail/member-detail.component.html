@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     <div *ngIf="member">
-      <h2 data-cy="memberDetailsHeading"><span jhiTranslate="mngmtInstitunaApp.member.detail.title">Member</span></h2>
+      <h2 data-cy="memberDetailsHeading"><span jhiTranslate="divinoApp.member.detail.title">Member</span></h2>
 
       <hr />
 
@@ -14,41 +14,41 @@
         <dd>
           <span>{{ member.id }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.member.createdBy">Created By</span></dt>
+        <dt><span jhiTranslate="divinoApp.member.createdBy">Created By</span></dt>
         <dd>
           <span>{{ member.createdBy }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.member.createdOn">Created On</span></dt>
+        <dt><span jhiTranslate="divinoApp.member.createdOn">Created On</span></dt>
         <dd>
           <span>{{ member.createdOn | formatMediumDatetime }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.member.updatedBy">Updated By</span></dt>
+        <dt><span jhiTranslate="divinoApp.member.updatedBy">Updated By</span></dt>
         <dd>
           <span>{{ member.updatedBy }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.member.updatedOn">Updated On</span></dt>
+        <dt><span jhiTranslate="divinoApp.member.updatedOn">Updated On</span></dt>
         <dd>
           <span>{{ member.updatedOn | formatMediumDatetime }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.member.deletedBy">Deleted By</span></dt>
+        <dt><span jhiTranslate="divinoApp.member.deletedBy">Deleted By</span></dt>
         <dd>
           <span>{{ member.deletedBy }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.member.deletedOn">Deleted On</span></dt>
+        <dt><span jhiTranslate="divinoApp.member.deletedOn">Deleted On</span></dt>
         <dd>
           <span>{{ member.deletedOn | formatMediumDatetime }}</span>
         </dd>
       </dl>
       <dl class="row-md jh-entity-details">
-        <dt><span jhiTranslate="mngmtInstitunaApp.member.nickname">Nickname</span></dt>
+        <dt><span jhiTranslate="divinoApp.member.nickname">Nickname</span></dt>
         <dd>
           <span>{{ member.nickname }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.member.birthday">Birthday</span></dt>
+        <dt><span jhiTranslate="divinoApp.member.birthday">Birthday</span></dt>
         <dd>
           <span>{{ member.birthday | formatMediumDate }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.member.user">User</span></dt>
+        <dt><span jhiTranslate="divinoApp.member.user">User</span></dt>
         <dd>
           <span>{{ member.user?.login }}</span>
         </dd>

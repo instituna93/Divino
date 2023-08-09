@@ -1,11 +1,11 @@
 <div>
   <h2 id="page-heading" data-cy="TagTypeHeading">
-    <span jhiTranslate="mngmtInstitunaApp.tagType.home.title">Tag Types</span>
+    <span jhiTranslate="divinoApp.tagType.home.title">Tag Types</span>
 
     <div class="d-flex justify-content-end">
       <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
-        <span jhiTranslate="mngmtInstitunaApp.tagType.home.refreshListLabel">Refresh list</span>
+        <span jhiTranslate="divinoApp.tagType.home.refreshListLabel">Refresh list</span>
       </button>
 
       <button
@@ -15,7 +15,7 @@
         [routerLink]="['/tag-type/new']"
       >
         <fa-icon icon="plus"></fa-icon>
-        <span jhiTranslate="mngmtInstitunaApp.tagType.home.createLabel"> Criar novo(a) Tag Type </span>
+        <span jhiTranslate="divinoApp.tagType.home.createLabel"> Criar novo(a) Tag Type </span>
       </button>
     </div>
   </h2>
@@ -25,7 +25,7 @@
   <jhi-alert></jhi-alert>
 
   <div class="alert alert-warning" id="no-result" *ngIf="tagTypes?.length === 0">
-    <span jhiTranslate="mngmtInstitunaApp.tagType.home.notFound">Nenhum Tag Types encontrado</span>
+    <span jhiTranslate="divinoApp.tagType.home.notFound">Nenhum Tag Types encontrado</span>
   </div>
 
   <div class="table-responsive table-entities" id="entities" *ngIf="tagTypes && tagTypes.length > 0">
@@ -41,37 +41,37 @@
             </th>
             <th scope="col" jhiSortBy="createdBy">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.tagType.createdBy">Created By</span>
+                <span jhiTranslate="divinoApp.tagType.createdBy">Created By</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="createdOn">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.tagType.createdOn">Created On</span>
+                <span jhiTranslate="divinoApp.tagType.createdOn">Created On</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="updatedBy">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.tagType.updatedBy">Updated By</span>
+                <span jhiTranslate="divinoApp.tagType.updatedBy">Updated By</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="updatedOn">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.tagType.updatedOn">Updated On</span>
+                <span jhiTranslate="divinoApp.tagType.updatedOn">Updated On</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="deletedBy">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.tagType.deletedBy">Deleted By</span>
+                <span jhiTranslate="divinoApp.tagType.deletedBy">Deleted By</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="deletedOn">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.tagType.deletedOn">Deleted On</span>
+                <span jhiTranslate="divinoApp.tagType.deletedOn">Deleted On</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
@@ -79,19 +79,19 @@
           <ng-container>
             <th scope="col" jhiSortBy="description">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.tagType.description">Description</span>
+                <span jhiTranslate="divinoApp.tagType.description">Description</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="restricted">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.tagType.restricted">Restricted</span>
+                <span jhiTranslate="divinoApp.tagType.restricted">Restricted</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="defaultTag.description">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.tagType.defaultTag">Default Tag</span>
+                <span jhiTranslate="divinoApp.tagType.defaultTag">Default Tag</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>

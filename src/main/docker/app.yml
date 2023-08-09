@@ -1,14 +1,14 @@
 # This configuration is intended for development purpose, it's **your** responsibility to harden it for production
-name: mngmtinstituna
+name: divino
 services:
   app:
-    image: mngmtinstituna
+    image: divino
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
       - SPRING_PROFILES_ACTIVE=prod,api-docs
       - MANAGEMENT_PROMETHEUS_METRICS_EXPORT_ENABLED=true
-      - SPRING_R2DBC_URL=r2dbc:postgresql://postgresql:5432/MngmtInstituna
-      - SPRING_LIQUIBASE_URL=jdbc:postgresql://postgresql:5432/MngmtInstituna
+      - SPRING_R2DBC_URL=r2dbc:postgresql://postgresql:5432/Divino
+      - SPRING_LIQUIBASE_URL=jdbc:postgresql://postgresql:5432/Divino
     ports:
       - 127.0.0.1:8080:8080
     healthcheck:

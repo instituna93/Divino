@@ -9,7 +9,7 @@ import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 
-@AnalyzeClasses(packagesOf = MngmtInstitunaApp.class, importOptions = DoNotIncludeTests.class)
+@AnalyzeClasses(packagesOf = DivinoApp.class, importOptions = DoNotIncludeTests.class)
 class TechnicalStructureTest {
 
     // prettier-ignore
@@ -30,7 +30,7 @@ class TechnicalStructureTest {
         .whereLayer("Persistence").mayOnlyBeAccessedByLayers("Service", "Security", "Web", "Config")
         .whereLayer("Domain").mayOnlyBeAccessedByLayers("Persistence", "Service", "Security", "Web", "Config")
 
-        .ignoreDependency(belongToAnyOf(MngmtInstitunaApp.class), alwaysTrue())
+        .ignoreDependency(belongToAnyOf(DivinoApp.class), alwaysTrue())
         .ignoreDependency(alwaysTrue(), belongToAnyOf(
             com.instituna.config.Constants.class,
             com.instituna.config.ApplicationProperties.class

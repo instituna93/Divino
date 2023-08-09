@@ -30,7 +30,7 @@ module.exports = async (config, options, targetOptions) => {
         },
       }),
       new WebpackNotifierPlugin({
-        title: 'Mngmt Instituna',
+        title: 'Divino',
         contentImage: path.join(__dirname, 'logo.png'),
       })
     );

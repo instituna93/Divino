@@ -1,8 +1,8 @@
 {
-  "name": "mngmt-instituna",
+  "name": "divino",
   "version": "0.0.1-SNAPSHOT",
   "private": true,
-  "description": "Description for Mngmt Instituna",
+  "description": "Description for Divino",
   "license": "UNLICENSED",
   "scripts": {
     "app:start": "./mvnw",

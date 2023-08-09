@@ -1,11 +1,7 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-      <h2
-        id="jhi-member-tag-heading"
-        data-cy="MemberTagCreateUpdateHeading"
-        jhiTranslate="mngmtInstitunaApp.memberTag.home.createOrEditLabel"
-      >
+      <h2 id="jhi-member-tag-heading" data-cy="MemberTagCreateUpdateHeading" jhiTranslate="divinoApp.memberTag.home.createOrEditLabel">
         Criar ou editar Member Tag
       </h2>
 
@@ -19,7 +15,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.memberTag.createdBy" for="field_createdBy">Created By</label>
+            <label class="form-label" jhiTranslate="divinoApp.memberTag.createdBy" for="field_createdBy">Created By</label>
             <input
               type="number"
               class="form-control"
@@ -32,7 +28,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.memberTag.createdOn" for="field_createdOn">Created On</label>
+            <label class="form-label" jhiTranslate="divinoApp.memberTag.createdOn" for="field_createdOn">Created On</label>
             <div class="d-flex">
               <input
                 id="field_createdOn"
@@ -48,7 +44,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.memberTag.updatedBy" for="field_updatedBy">Updated By</label>
+            <label class="form-label" jhiTranslate="divinoApp.memberTag.updatedBy" for="field_updatedBy">Updated By</label>
             <input
               type="number"
               class="form-control"
@@ -61,7 +57,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.memberTag.updatedOn" for="field_updatedOn">Updated On</label>
+            <label class="form-label" jhiTranslate="divinoApp.memberTag.updatedOn" for="field_updatedOn">Updated On</label>
             <div class="d-flex">
               <input
                 id="field_updatedOn"
@@ -77,7 +73,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.memberTag.deletedBy" for="field_deletedBy">Deleted By</label>
+            <label class="form-label" jhiTranslate="divinoApp.memberTag.deletedBy" for="field_deletedBy">Deleted By</label>
             <input
               type="number"
               class="form-control"
@@ -90,7 +86,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.memberTag.deletedOn" for="field_deletedOn">Deleted On</label>
+            <label class="form-label" jhiTranslate="divinoApp.memberTag.deletedOn" for="field_deletedOn">Deleted On</label>
             <div class="d-flex">
               <input
                 id="field_deletedOn"
@@ -107,7 +103,7 @@
         </div>
         <div>
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.memberTag.tag" for="field_tag">Tag</label>
+            <label class="form-label" jhiTranslate="divinoApp.memberTag.tag" for="field_tag">Tag</label>
             <select class="form-control" id="field_tag" data-cy="tag" name="tag" formControlName="tag" [compareWith]="compareTag">
               <option *ngIf="editForm.get(['tag'])!.value == null" [ngValue]="null" selected></option>
               <option [ngValue]="tagOption" *ngFor="let tagOption of tagsSharedCollection">{{ tagOption.description }}</option>
@@ -120,7 +116,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" jhiTranslate="mngmtInstitunaApp.memberTag.member" for="field_member">Member</label>
+            <label class="form-label" jhiTranslate="divinoApp.memberTag.member" for="field_member">Member</label>
             <select
               class="form-control"
               id="field_member"

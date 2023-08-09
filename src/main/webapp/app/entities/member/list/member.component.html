@@ -1,11 +1,11 @@
 <div>
   <h2 id="page-heading" data-cy="MemberHeading">
-    <span jhiTranslate="mngmtInstitunaApp.member.home.title">Members</span>
+    <span jhiTranslate="divinoApp.member.home.title">Members</span>
 
     <div class="d-flex justify-content-end">
       <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
-        <span jhiTranslate="mngmtInstitunaApp.member.home.refreshListLabel">Refresh list</span>
+        <span jhiTranslate="divinoApp.member.home.refreshListLabel">Refresh list</span>
       </button>
 
       <button
@@ -15,7 +15,7 @@
         [routerLink]="['/member/new']"
       >
         <fa-icon icon="plus"></fa-icon>
-        <span jhiTranslate="mngmtInstitunaApp.member.home.createLabel"> Criar novo(a) Member </span>
+        <span jhiTranslate="divinoApp.member.home.createLabel"> Criar novo(a) Member </span>
       </button>
     </div>
   </h2>
@@ -25,7 +25,7 @@
   <jhi-alert></jhi-alert>
 
   <div class="alert alert-warning" id="no-result" *ngIf="members?.length === 0">
-    <span jhiTranslate="mngmtInstitunaApp.member.home.notFound">Nenhum Members encontrado</span>
+    <span jhiTranslate="divinoApp.member.home.notFound">Nenhum Members encontrado</span>
   </div>
 
   <div class="table-responsive table-entities" id="entities" *ngIf="members && members.length > 0">
@@ -41,37 +41,37 @@
             </th>
             <th scope="col" jhiSortBy="createdBy">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.member.createdBy">Created By</span>
+                <span jhiTranslate="divinoApp.member.createdBy">Created By</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="createdOn">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.member.createdOn">Created On</span>
+                <span jhiTranslate="divinoApp.member.createdOn">Created On</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="updatedBy">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.member.updatedBy">Updated By</span>
+                <span jhiTranslate="divinoApp.member.updatedBy">Updated By</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="updatedOn">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.member.updatedOn">Updated On</span>
+                <span jhiTranslate="divinoApp.member.updatedOn">Updated On</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="deletedBy">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.member.deletedBy">Deleted By</span>
+                <span jhiTranslate="divinoApp.member.deletedBy">Deleted By</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="deletedOn">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.member.deletedOn">Deleted On</span>
+                <span jhiTranslate="divinoApp.member.deletedOn">Deleted On</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
@@ -79,19 +79,19 @@
           <ng-container>
             <th scope="col" jhiSortBy="nickname">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.member.nickname">Nickname</span>
+                <span jhiTranslate="divinoApp.member.nickname">Nickname</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="birthday">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.member.birthday">Birthday</span>
+                <span jhiTranslate="divinoApp.member.birthday">Birthday</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="user.login">
               <div class="d-flex">
-                <span jhiTranslate="mngmtInstitunaApp.member.user">User</span>
+                <span jhiTranslate="divinoApp.member.user">User</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>

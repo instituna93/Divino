@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     <div *ngIf="tag">
-      <h2 data-cy="tagDetailsHeading"><span jhiTranslate="mngmtInstitunaApp.tag.detail.title">Tag</span></h2>
+      <h2 data-cy="tagDetailsHeading"><span jhiTranslate="divinoApp.tag.detail.title">Tag</span></h2>
 
       <hr />
 
@@ -14,38 +14,38 @@
         <dd>
           <span>{{ tag.id }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.tag.createdBy">Created By</span></dt>
+        <dt><span jhiTranslate="divinoApp.tag.createdBy">Created By</span></dt>
         <dd>
           <span>{{ tag.createdBy }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.tag.createdOn">Created On</span></dt>
+        <dt><span jhiTranslate="divinoApp.tag.createdOn">Created On</span></dt>
         <dd>
           <span>{{ tag.createdOn | formatMediumDatetime }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.tag.updatedBy">Updated By</span></dt>
+        <dt><span jhiTranslate="divinoApp.tag.updatedBy">Updated By</span></dt>
         <dd>
           <span>{{ tag.updatedBy }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.tag.updatedOn">Updated On</span></dt>
+        <dt><span jhiTranslate="divinoApp.tag.updatedOn">Updated On</span></dt>
         <dd>
           <span>{{ tag.updatedOn | formatMediumDatetime }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.tag.deletedBy">Deleted By</span></dt>
+        <dt><span jhiTranslate="divinoApp.tag.deletedBy">Deleted By</span></dt>
         <dd>
           <span>{{ tag.deletedBy }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.tag.deletedOn">Deleted On</span></dt>
+        <dt><span jhiTranslate="divinoApp.tag.deletedOn">Deleted On</span></dt>
         <dd>
           <span>{{ tag.deletedOn | formatMediumDatetime }}</span>
         </dd>
       </dl>
 
       <dl class="row-md jh-entity-details">
-        <dt><span jhiTranslate="mngmtInstitunaApp.tag.description">Description</span></dt>
+        <dt><span jhiTranslate="divinoApp.tag.description">Description</span></dt>
         <dd>
           <span>{{ tag.description }}</span>
         </dd>
-        <dt><span jhiTranslate="mngmtInstitunaApp.tag.tagType">Tag Type</span></dt>
+        <dt><span jhiTranslate="divinoApp.tag.tagType">Tag Type</span></dt>
         <dd>
           <div *ngIf="tag.tagType">
             <a [routerLink]="['/tag-type', tag.tagType.id, 'view']">{{ tag.tagType.description }}</a>

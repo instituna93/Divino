@@ -1,12 +1,12 @@
 # This configuration is intended for development purpose, it's **your** responsibility to harden it for production
-name: mngmtinstituna
+name: divino
 services:
   postgresql:
     image: postgres:15.3
     # volumes:
-    #   - ~/volumes/jhipster/MngmtInstituna/postgresql/:/var/lib/postgresql/data/
+    #   - ~/volumes/jhipster/Divino/postgresql/:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=MngmtInstituna
+      - POSTGRES_USER=Divino
       - POSTGRES_PASSWORD=
       - POSTGRES_HOST_AUTH_METHOD=trust
     healthcheck:

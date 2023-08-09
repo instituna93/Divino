@@ -3,7 +3,7 @@ application {
 	config {
 		applicationType monolith
 		authenticationType jwt
-		baseName MngmtInstituna
+		baseName Divino
 		buildTool maven
 		cacheProvider no
 		clientFramework angular
