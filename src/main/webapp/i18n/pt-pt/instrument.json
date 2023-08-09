@@ -1,0 +1,36 @@
+{
+  "divinoApp": {
+    "instrument": {
+      "home": {
+        "title": "Instrumentos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Instrumento",
+        "createOrEditLabel": "Criar ou editar Instrumento",
+        "notFound": "Nenhum Instrumento encontrado"
+      },
+      "created": "Um novo Instrumento foi criado com o identificador {{ param }}",
+      "updated": "Instrumento com identificador {{ param }} foi actualizado",
+      "deleted": "Instrumento com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o Instrumento {{ id }}?"
+      },
+      "detail": {
+        "title": "Instrumento"
+      },
+      "id": "ID",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "deletedBy": "Deleted By",
+      "deletedOn": "Deleted On",
+      "name": "Nome",
+      "type": "Tipo",
+      "description": "Descrição",
+      "isActive": "Activo",
+      "boughtDate": "Data compra",
+      "price": "Preço",
+      "requests": "Requerimentos"
+    }
+  }
+}

@@ -2,20 +2,20 @@
   "divinoApp": {
     "tagType": {
       "home": {
-        "title": "Tag Types",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Criar novo(a) Tag Type",
-        "createOrEditLabel": "Criar ou editar Tag Type",
-        "notFound": "Nenhum Tag Types encontrado"
+        "title": "Tipos de Tags",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Tipo de Tag",
+        "createOrEditLabel": "Criar ou editar Tipo de Tag",
+        "notFound": "Nenhum Tipo de Tag encontrado"
       },
-      "created": "Um novo Tag Type foi criado com o identificador {{ param }}",
-      "updated": "Tag Type com identificador {{ param }} foi actualizado",
-      "deleted": "Tag Type com identificador {{ param }} foi eliminado",
+      "created": "Um novo Tipo de Tag foi criado com o identificador {{ param }}",
+      "updated": "Tipo de Tag com identificador {{ param }} foi actualizado",
+      "deleted": "Tipo de Tag com identificador {{ param }} foi eliminado",
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Tag Type {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar o Tipo de Tag {{ id }}?"
       },
       "detail": {
-        "title": "Tag Type"
+        "title": "Tipo de Tag"
       },
       "id": "ID",
       "createdBy": "Created By",
@@ -24,9 +24,9 @@
       "updatedOn": "Updated On",
       "deletedBy": "Deleted By",
       "deletedOn": "Deleted On",
-      "description": "Description",
-      "restricted": "Restricted",
-      "defaultTag": "Default Tag",
+      "description": "Descrição",
+      "restricted": "Restrita",
+      "defaultTag": "Tag default",
       "tags": "Tags"
     }
   }

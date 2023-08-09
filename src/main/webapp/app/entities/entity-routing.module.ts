@@ -24,6 +24,16 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'divinoApp.tagType.home.title' },
         loadChildren: () => import('./tag-type/tag-type.routes'),
       },
+      {
+        path: 'instrument',
+        data: { pageTitle: 'divinoApp.instrument.home.title' },
+        loadChildren: () => import('./instrument/instrument.routes'),
+      },
+      {
+        path: 'instrument-request',
+        data: { pageTitle: 'divinoApp.instrumentRequest.home.title' },
+        loadChildren: () => import('./instrument-request/instrument-request.routes'),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

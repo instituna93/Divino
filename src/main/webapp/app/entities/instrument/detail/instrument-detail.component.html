@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="instrument">
+      <h2 data-cy="instrumentDetailsHeading"><span jhiTranslate="divinoApp.instrument.detail.title">Instrument</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl *jhiHasAnyAuthority="'ROLE_ADMIN'" class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">Código</span></dt>
+        <dd>
+          <span>{{ instrument.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrument.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ instrument.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrument.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ instrument.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrument.updatedBy">Updated By</span></dt>
+        <dd>
+          <span>{{ instrument.updatedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrument.updatedOn">Updated On</span></dt>
+        <dd>
+          <span>{{ instrument.updatedOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrument.deletedBy">Deleted By</span></dt>
+        <dd>
+          <span>{{ instrument.deletedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrument.deletedOn">Deleted On</span></dt>
+        <dd>
+          <span>{{ instrument.deletedOn | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="divinoApp.instrument.name">Name</span></dt>
+        <dd>
+          <span>{{ instrument.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrument.type">Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'divinoApp.InstrumentType.' + instrument.type }}">{{ instrument.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrument.description">Description</span></dt>
+        <dd>
+          <span>{{ instrument.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrument.isActive">Is Active</span></dt>
+        <dd>
+          <span>{{ instrument.isActive }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrument.boughtDate">Bought Date</span></dt>
+        <dd>
+          <span>{{ instrument.boughtDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrument.price">Price</span></dt>
+        <dd>
+          <span>{{ instrument.price }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Voltar</span>
+      </button>
+
+      <button type="button" [routerLink]="['/instrument', instrument.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

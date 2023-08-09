@@ -1,0 +1,178 @@
+<div>
+  <h2 id="page-heading" data-cy="InstrumentHeading">
+    <span jhiTranslate="divinoApp.instrument.home.title">Instruments</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="divinoApp.instrument.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-instrument"
+        [routerLink]="['/instrument/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="divinoApp.instrument.home.createLabel"> Criar novo(a) Instrument </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="instruments?.length === 0">
+    <span jhiTranslate="divinoApp.instrument.home.notFound">Nenhum Instruments encontrado</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="instruments && instruments.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <ng-container *jhiHasAnyAuthority="'ROLE_ADMIN'">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">C�digo</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="createdBy">
+              <div class="d-flex">
+                <span jhiTranslate="divinoApp.instrument.createdBy">Created By</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="createdOn">
+              <div class="d-flex">
+                <span jhiTranslate="divinoApp.instrument.createdOn">Created On</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="updatedBy">
+              <div class="d-flex">
+                <span jhiTranslate="divinoApp.instrument.updatedBy">Updated By</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="updatedOn">
+              <div class="d-flex">
+                <span jhiTranslate="divinoApp.instrument.updatedOn">Updated On</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="deletedBy">
+              <div class="d-flex">
+                <span jhiTranslate="divinoApp.instrument.deletedBy">Deleted By</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="deletedOn">
+              <div class="d-flex">
+                <span jhiTranslate="divinoApp.instrument.deletedOn">Deleted On</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+          </ng-container>
+          <ng-container>
+            <th scope="col" jhiSortBy="name">
+              <div class="d-flex">
+                <span jhiTranslate="divinoApp.instrument.name">Name</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="type">
+              <div class="d-flex">
+                <span jhiTranslate="divinoApp.instrument.type">Type</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="description">
+              <div class="d-flex">
+                <span jhiTranslate="divinoApp.instrument.description">Description</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="isActive">
+              <div class="d-flex">
+                <span jhiTranslate="divinoApp.instrument.isActive">Is Active</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="boughtDate">
+              <div class="d-flex">
+                <span jhiTranslate="divinoApp.instrument.boughtDate">Bought Date</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="price">
+              <div class="d-flex">
+                <span jhiTranslate="divinoApp.instrument.price">Price</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </ng-container>
+        </tr>
+      </thead>
+      <tbody
+        infinite-scroll
+        (scrolled)="loadPage(page + 1)"
+        [infiniteScrollDisabled]="page - 1 >= links['last']"
+        [infiniteScrollDistance]="0"
+      >
+        <tr *ngFor="let instrument of instruments; trackBy: trackId" data-cy="entityTable">
+          <ng-container *jhiHasAnyAuthority="'ROLE_ADMIN'">
+            <td>
+              <a [routerLink]="['/instrument', instrument.id, 'view']">{{ instrument.id }}</a>
+            </td>
+            <td>{{ instrument.createdBy }}</td>
+            <td>{{ instrument.createdOn | formatMediumDatetime }}</td>
+            <td>{{ instrument.updatedBy }}</td>
+            <td>{{ instrument.updatedOn | formatMediumDatetime }}</td>
+            <td>{{ instrument.deletedBy }}</td>
+            <td>{{ instrument.deletedOn | formatMediumDatetime }}</td>
+          </ng-container>
+          <ng-container>
+            <td>{{ instrument.name }}</td>
+            <td jhiTranslate="{{ 'divinoApp.InstrumentType.' + instrument.type }}">{{ instrument.type }}</td>
+            <td>{{ instrument.description }}</td>
+            <td>{{ instrument.isActive }}</td>
+            <td>{{ instrument.boughtDate | formatMediumDate }}</td>
+            <td>{{ instrument.price }}</td>
+            <td class="text-end">
+              <div class="btn-group">
+                <button
+                  type="submit"
+                  [routerLink]="['/instrument', instrument.id, 'view']"
+                  class="btn btn-info btn-sm"
+                  data-cy="entityDetailsButton"
+                >
+                  <fa-icon icon="eye"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Visualizar</span>
+                </button>
+
+                <button
+                  type="submit"
+                  [routerLink]="['/instrument', instrument.id, 'edit']"
+                  class="btn btn-primary btn-sm"
+                  data-cy="entityEditButton"
+                >
+                  <fa-icon icon="pencil-alt"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
+                </button>
+
+                <button type="submit" (click)="delete(instrument)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                  <fa-icon icon="times"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Eliminar</span>
+                </button>
+              </div>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

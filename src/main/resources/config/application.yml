@@ -158,7 +158,7 @@ jhipster:
   #   allow-credentials: true
   #   max-age: 1800
   mail:
-    from: Divino@localhost
+    from: instituna+divino@gmail.com
   api-docs:
     default-include-pattern: ${server.servlet.context-path:}/api/**
     management-include-pattern: ${server.servlet.context-path:}/management/**

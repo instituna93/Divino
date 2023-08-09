@@ -54,10 +54,10 @@ describe('MemberTag Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Tag query and add missing value', () => {
       const memberTag: IMemberTag = { id: 456 };
-      const tag: ITag = { id: 24499 };
+      const tag: ITag = { id: 9363 };
       memberTag.tag = tag;
 
-      const tagCollection: ITag[] = [{ id: 21153 }];
+      const tagCollection: ITag[] = [{ id: 16224 }];
       jest.spyOn(tagService, 'query').mockReturnValue(of(new HttpResponse({ body: tagCollection })));
       const additionalTags = [tag];
       const expectedCollection: ITag[] = [...additionalTags, ...tagCollection];
@@ -73,10 +73,10 @@ describe('MemberTag Management Update Component', () => {
 
     it('Should call Member query and add missing value', () => {
       const memberTag: IMemberTag = { id: 456 };
-      const member: IMember = { id: 17571 };
+      const member: IMember = { id: 2431 };
       memberTag.member = member;
 
-      const memberCollection: IMember[] = [{ id: 7893 }];
+      const memberCollection: IMember[] = [{ id: 3304 }];
       jest.spyOn(memberService, 'query').mockReturnValue(of(new HttpResponse({ body: memberCollection })));
       const additionalMembers = [member];
       const expectedCollection: IMember[] = [...additionalMembers, ...memberCollection];
@@ -95,9 +95,9 @@ describe('MemberTag Management Update Component', () => {
 
     it('Should update editForm', () => {
       const memberTag: IMemberTag = { id: 456 };
-      const tag: ITag = { id: 13759 };
+      const tag: ITag = { id: 7508 };
       memberTag.tag = tag;
-      const member: IMember = { id: 17193 };
+      const member: IMember = { id: 10726 };
       memberTag.member = member;
 
       activatedRoute.data = of({ memberTag });

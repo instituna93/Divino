@@ -50,10 +50,10 @@ describe('TagType Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Tag query and add missing value', () => {
       const tagType: ITagType = { id: 456 };
-      const defaultTag: ITag = { id: 16588 };
+      const defaultTag: ITag = { id: 7083 };
       tagType.defaultTag = defaultTag;
 
-      const tagCollection: ITag[] = [{ id: 22414 }];
+      const tagCollection: ITag[] = [{ id: 9375 }];
       jest.spyOn(tagService, 'query').mockReturnValue(of(new HttpResponse({ body: tagCollection })));
       const additionalTags = [defaultTag];
       const expectedCollection: ITag[] = [...additionalTags, ...tagCollection];
@@ -69,7 +69,7 @@ describe('TagType Management Update Component', () => {
 
     it('Should update editForm', () => {
       const tagType: ITagType = { id: 456 };
-      const defaultTag: ITag = { id: 3682 };
+      const defaultTag: ITag = { id: 3456 };
       tagType.defaultTag = defaultTag;
 
       activatedRoute.data = of({ tagType });

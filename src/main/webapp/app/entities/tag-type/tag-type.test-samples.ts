@@ -3,34 +3,34 @@ import dayjs from 'dayjs/esm';
 import { ITagType, NewTagType } from './tag-type.model';
 
 export const sampleWithRequiredData: ITagType = {
-  id: 21715,
-  description: 'Feito Nordeste Moldávia',
+  id: 2170,
+  description: 'índigo bronzeado Granada',
 };
 
 export const sampleWithPartialData: ITagType = {
-  id: 11304,
-  createdBy: 16608,
-  createdOn: dayjs('2023-07-26T01:05'),
-  updatedBy: 7214,
-  deletedBy: 16594,
-  deletedOn: dayjs('2023-07-26T04:23'),
-  description: 'Nordeste',
-};
-
-export const sampleWithFullData: ITagType = {
-  id: 8532,
-  createdBy: 3604,
-  createdOn: dayjs('2023-07-25T21:56'),
-  updatedBy: 878,
-  updatedOn: dayjs('2023-07-25T11:43'),
-  deletedBy: 22222,
-  deletedOn: dayjs('2023-07-25T12:55'),
-  description: 'ciano',
+  id: 8386,
+  createdBy: 1716,
+  createdOn: dayjs('2023-07-26T04:40'),
+  updatedBy: 32723,
+  updatedOn: dayjs('2023-07-25T19:24'),
+  description: 'Avenida Calças',
   restricted: true,
 };
 
+export const sampleWithFullData: ITagType = {
+  id: 10826,
+  createdBy: 21010,
+  createdOn: dayjs('2023-07-25T13:20'),
+  updatedBy: 28864,
+  updatedOn: dayjs('2023-07-26T03:08'),
+  deletedBy: 9422,
+  deletedOn: dayjs('2023-07-25T18:37'),
+  description: 'Acesso Prático',
+  restricted: false,
+};
+
 export const sampleWithNewData: NewTagType = {
-  description: 'Sodoeste Marinho Desporto',
+  description: 'Paraguai Borracha',
   id: null,
 };
 

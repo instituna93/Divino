@@ -1,0 +1,33 @@
+{
+  "divinoApp": {
+    "instrumentRequest": {
+      "home": {
+        "title": "Requerimentos de Instrumentos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Requerimento de Instrumento",
+        "createOrEditLabel": "Criar ou editar Requerimento de Instrumento",
+        "notFound": "Nenhum Requerimento de Instrumento encontrado"
+      },
+      "created": "Um novo Requerimento de Instrumento foi criado com o identificador {{ param }}",
+      "updated": "Requerimento de Instrumento com identificador {{ param }} foi actualizado",
+      "deleted": "Requerimento de Instrumento com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o Requerimento de Instrumento {{ id }}?"
+      },
+      "detail": {
+        "title": "Requerimento de Instrumento"
+      },
+      "id": "ID",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "deletedBy": "Deleted By",
+      "deletedOn": "Deleted On",
+      "description": "Descrição",
+      "isReturned": "Devolvido",
+      "instrument": "Instrumento",
+      "member": "Responsável"
+    }
+  }
+}

@@ -7,10 +7,12 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entidades",
-        "member": "Member",
-        "memberTag": "Member Tag",
-        "tag": "Tag",
-        "tagType": "Tag Type",
+        "member": "Membros",
+        "memberTag": "Tags dos Membros",
+        "tag": "Tags",
+        "tagType": "Tipos de Tags",
+        "instrument": "Instrumentos",
+        "instrumentRequest": "Requisição de Instrumentos",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -146,5 +148,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "Este é o seu rodapé"
+  "footer": "Instituna @ 2023"
 }

@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
 
 import SharedModule from 'app/shared/shared.module';
-import HasAnyAuthorityDirective from 'app/shared/auth/has-any-authority.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TagTypeFormService, TagTypeFormGroup } from './tag-type-form.service';
@@ -18,7 +17,7 @@ import { TagService } from 'app/entities/tag/service/tag.service';
   standalone: true,
   selector: 'jhi-tag-type-update',
   templateUrl: './tag-type-update.component.html',
-  imports: [SharedModule, HasAnyAuthorityDirective, FormsModule, ReactiveFormsModule],
+  imports: [SharedModule, FormsModule, ReactiveFormsModule],
 })
 export class TagTypeUpdateComponent implements OnInit {
   isSaving = false;

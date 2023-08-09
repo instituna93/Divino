@@ -417,7 +417,11 @@ class MemberTagResourceIT {
         MemberTag partialUpdatedMemberTag = new MemberTag();
         partialUpdatedMemberTag.setId(memberTag.getId());
 
-        partialUpdatedMemberTag.createdBy(UPDATED_CREATED_BY).updatedOn(UPDATED_UPDATED_ON);
+        partialUpdatedMemberTag
+            .createdBy(UPDATED_CREATED_BY)
+            .updatedBy(UPDATED_UPDATED_BY)
+            .deletedBy(UPDATED_DELETED_BY)
+            .deletedOn(UPDATED_DELETED_ON);
 
         webTestClient
             .patch()
@@ -434,10 +438,10 @@ class MemberTagResourceIT {
         MemberTag testMemberTag = memberTagList.get(memberTagList.size() - 1);
         assertThat(testMemberTag.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
         assertThat(testMemberTag.getCreatedOn()).isEqualTo(DEFAULT_CREATED_ON);
-        assertThat(testMemberTag.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
-        assertThat(testMemberTag.getUpdatedOn()).isEqualTo(UPDATED_UPDATED_ON);
-        assertThat(testMemberTag.getDeletedBy()).isEqualTo(DEFAULT_DELETED_BY);
-        assertThat(testMemberTag.getDeletedOn()).isEqualTo(DEFAULT_DELETED_ON);
+        assertThat(testMemberTag.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
+        assertThat(testMemberTag.getUpdatedOn()).isEqualTo(DEFAULT_UPDATED_ON);
+        assertThat(testMemberTag.getDeletedBy()).isEqualTo(UPDATED_DELETED_BY);
+        assertThat(testMemberTag.getDeletedOn()).isEqualTo(UPDATED_DELETED_ON);
     }
 
     @Test

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity InstrumentRequest.
+    -->
+    <changeSet id="20230809010654-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="instrument_id"
+                                 baseTableName="instrument_request"
+                                 constraintName="fk_instrument_request__instrument_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="instrument"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="member_id"
+                                 baseTableName="instrument_request"
+                                 constraintName="fk_instrument_request__member_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="member"
+                                 />
+    </changeSet>
+</databaseChangeLog>

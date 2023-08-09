@@ -423,14 +423,7 @@ class MemberResourceIT {
         Member partialUpdatedMember = new Member();
         partialUpdatedMember.setId(member.getId());
 
-        partialUpdatedMember
-            .createdBy(UPDATED_CREATED_BY)
-            .createdOn(UPDATED_CREATED_ON)
-            .updatedBy(UPDATED_UPDATED_BY)
-            .updatedOn(UPDATED_UPDATED_ON)
-            .deletedBy(UPDATED_DELETED_BY)
-            .deletedOn(UPDATED_DELETED_ON)
-            .birthday(UPDATED_BIRTHDAY);
+        partialUpdatedMember.createdBy(UPDATED_CREATED_BY).updatedOn(UPDATED_UPDATED_ON);
 
         webTestClient
             .patch()
@@ -446,13 +439,13 @@ class MemberResourceIT {
         assertThat(memberList).hasSize(databaseSizeBeforeUpdate);
         Member testMember = memberList.get(memberList.size() - 1);
         assertThat(testMember.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
-        assertThat(testMember.getCreatedOn()).isEqualTo(UPDATED_CREATED_ON);
-        assertThat(testMember.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
+        assertThat(testMember.getCreatedOn()).isEqualTo(DEFAULT_CREATED_ON);
+        assertThat(testMember.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
         assertThat(testMember.getUpdatedOn()).isEqualTo(UPDATED_UPDATED_ON);
-        assertThat(testMember.getDeletedBy()).isEqualTo(UPDATED_DELETED_BY);
-        assertThat(testMember.getDeletedOn()).isEqualTo(UPDATED_DELETED_ON);
+        assertThat(testMember.getDeletedBy()).isEqualTo(DEFAULT_DELETED_BY);
+        assertThat(testMember.getDeletedOn()).isEqualTo(DEFAULT_DELETED_ON);
         assertThat(testMember.getNickname()).isEqualTo(DEFAULT_NICKNAME);
-        assertThat(testMember.getBirthday()).isEqualTo(UPDATED_BIRTHDAY);
+        assertThat(testMember.getBirthday()).isEqualTo(DEFAULT_BIRTHDAY);
     }
 
     @Test

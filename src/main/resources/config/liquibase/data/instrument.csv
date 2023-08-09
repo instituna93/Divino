@@ -1,0 +1,19 @@
+id;created_by;created_on;updated_by;updated_on;deleted_by;deleted_on;name;type;description;is_active;bought_date;price
+1;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Contra-baixo;Cordas;;TRUE;;
+2;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Bandolim velho;Cordas;;TRUE;;
+3;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Bandolim lagrima;Cordas;;TRUE;;
+4;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Bandolim novo;Cordas;;TRUE;;
+5;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Estandartes;Outros;;TRUE;;
+6;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Bombo;Percursao;;TRUE;;
+7;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Timbalão;Percursao;;TRUE;;
+8;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Pandeiretas;Percursao;;TRUE;;
+9;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Bomgos;Percursao;;TRUE;;
+10;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Acordeão;Sopro;;TRUE;;
+11;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Cavaquinho 1;Cordas;;TRUE;;
+12;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Cavaquinho 2;Cordas;;TRUE;;
+13;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Cavaquinho 3;Cordas;;TRUE;;
+14;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Guitarra 1;Cordas;;TRUE;;
+15;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Guitarra 2;Cordas;;TRUE;;
+16;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Guitarra 3;Cordas;;TRUE;;
+17;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Guitarra 4;Cordas;;TRUE;;
+18;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Guitarra 5;Cordas;;TRUE;;

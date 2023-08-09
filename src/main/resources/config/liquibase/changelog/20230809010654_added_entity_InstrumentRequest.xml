@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity InstrumentRequest.
+    -->
+    <changeSet id="20230809010654-1" author="jhipster">
+        <createTable tableName="instrument_request">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="created_by" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_on" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_by" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_on" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_by" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_on" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_returned" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="instrument_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="member_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="instrument_request" columnName="created_on" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="instrument_request" columnName="updated_on" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="instrument_request" columnName="deleted_on" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+</databaseChangeLog>

@@ -61,12 +61,12 @@ export class TagTypeFormService {
           validators: [Validators.required],
         }
       ),
-      createdBy: new FormControl({ value: tagTypeRawValue.createdBy, disabled: true }),
-      createdOn: new FormControl({ value: tagTypeRawValue.createdOn, disabled: true }),
-      updatedBy: new FormControl({ value: tagTypeRawValue.updatedBy, disabled: true }),
-      updatedOn: new FormControl({ value: tagTypeRawValue.updatedOn, disabled: true }),
-      deletedBy: new FormControl({ value: tagTypeRawValue.deletedBy, disabled: true }),
-      deletedOn: new FormControl({ value: tagTypeRawValue.deletedOn, disabled: true }),
+      createdBy: new FormControl(tagTypeRawValue.createdBy),
+      createdOn: new FormControl(tagTypeRawValue.createdOn),
+      updatedBy: new FormControl(tagTypeRawValue.updatedBy),
+      updatedOn: new FormControl(tagTypeRawValue.updatedOn),
+      deletedBy: new FormControl(tagTypeRawValue.deletedBy),
+      deletedOn: new FormControl(tagTypeRawValue.deletedOn),
       description: new FormControl(tagTypeRawValue.description, {
         validators: [Validators.required],
       }),

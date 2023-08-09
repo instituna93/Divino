@@ -443,12 +443,7 @@ class TagTypeResourceIT {
         TagType partialUpdatedTagType = new TagType();
         partialUpdatedTagType.setId(tagType.getId());
 
-        partialUpdatedTagType
-            .createdBy(UPDATED_CREATED_BY)
-            .updatedBy(UPDATED_UPDATED_BY)
-            .updatedOn(UPDATED_UPDATED_ON)
-            .deletedBy(UPDATED_DELETED_BY)
-            .description(UPDATED_DESCRIPTION);
+        partialUpdatedTagType.updatedBy(UPDATED_UPDATED_BY).updatedOn(UPDATED_UPDATED_ON).deletedOn(UPDATED_DELETED_ON);
 
         webTestClient
             .patch()
@@ -463,13 +458,13 @@ class TagTypeResourceIT {
         List<TagType> tagTypeList = tagTypeRepository.findAll().collectList().block();
         assertThat(tagTypeList).hasSize(databaseSizeBeforeUpdate);
         TagType testTagType = tagTypeList.get(tagTypeList.size() - 1);
-        assertThat(testTagType.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
+        assertThat(testTagType.getCreatedBy()).isEqualTo(DEFAULT_CREATED_BY);
         assertThat(testTagType.getCreatedOn()).isEqualTo(DEFAULT_CREATED_ON);
         assertThat(testTagType.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
         assertThat(testTagType.getUpdatedOn()).isEqualTo(UPDATED_UPDATED_ON);
-        assertThat(testTagType.getDeletedBy()).isEqualTo(UPDATED_DELETED_BY);
-        assertThat(testTagType.getDeletedOn()).isEqualTo(DEFAULT_DELETED_ON);
-        assertThat(testTagType.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
+        assertThat(testTagType.getDeletedBy()).isEqualTo(DEFAULT_DELETED_BY);
+        assertThat(testTagType.getDeletedOn()).isEqualTo(UPDATED_DELETED_ON);
+        assertThat(testTagType.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
         assertThat(testTagType.getRestricted()).isEqualTo(DEFAULT_RESTRICTED);
     }
 

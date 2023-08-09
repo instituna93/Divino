@@ -2,20 +2,20 @@
   "divinoApp": {
     "member": {
       "home": {
-        "title": "Members",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Criar novo(a) Member",
-        "createOrEditLabel": "Criar ou editar Member",
-        "notFound": "Nenhum Members encontrado"
+        "title": "Membros",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Membro",
+        "createOrEditLabel": "Criar ou editar Membro",
+        "notFound": "Nenhum Membro encontrado"
       },
-      "created": "Um novo Member foi criado com o identificador {{ param }}",
-      "updated": "Member com identificador {{ param }} foi actualizado",
-      "deleted": "Member com identificador {{ param }} foi eliminado",
+      "created": "Um novo Membro foi criado com o identificador {{ param }}",
+      "updated": "Membro com identificador {{ param }} foi actualizado",
+      "deleted": "Membro com identificador {{ param }} foi eliminado",
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Member {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar o Membro {{ id }}?"
       },
       "detail": {
-        "title": "Member"
+        "title": "Membro"
       },
       "id": "ID",
       "createdBy": "Created By",
@@ -24,10 +24,11 @@
       "updatedOn": "Updated On",
       "deletedBy": "Deleted By",
       "deletedOn": "Deleted On",
-      "nickname": "Nickname",
-      "birthday": "Birthday",
-      "user": "User",
-      "tags": "Tags"
+      "nickname": "Alcunha",
+      "birthday": "Data de Nascimento",
+      "user": "Utilizador",
+      "tags": "Tags",
+      "requests": "Requerimentos"
     }
   }
 }

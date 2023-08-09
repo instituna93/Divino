@@ -16,14 +16,14 @@
                   tableName="member"
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
-            <column name="nickname" type="string"/>
-            <column name="birthday" type="date"/>
             <column name="created_by" type="numeric"/>
             <column name="created_on" type="date"/>
             <column name="updated_by" type="numeric"/>
             <column name="updated_on" type="date"/>
             <column name="deleted_by" type="numeric"/>
             <column name="deleted_on" type="date"/>
+            <column name="nickname" type="string"/>
+            <column name="birthday" type="date"/>
         </loadData>
         <loadData
                   file="config/liquibase/data/tag_type.csv"
@@ -31,14 +31,33 @@
                   tableName="tag_type"
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
-            <column name="description" type="string"/>
-            <column name="restricted" type="boolean"/>
             <column name="created_by" type="numeric"/>
             <column name="created_on" type="date"/>
             <column name="updated_by" type="numeric"/>
             <column name="updated_on" type="date"/>
             <column name="deleted_by" type="numeric"/>
             <column name="deleted_on" type="date"/>
+            <column name="description" type="string"/>
+            <column name="restricted" type="boolean"/>
+        </loadData>
+        <loadData
+                  file="config/liquibase/data/instrument.csv"
+                  separator=";"
+                  tableName="instrument"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="created_by" type="numeric"/>
+            <column name="created_on" type="date"/>
+            <column name="updated_by" type="numeric"/>
+            <column name="updated_on" type="date"/>
+            <column name="deleted_by" type="numeric"/>
+            <column name="deleted_on" type="date"/>
+            <column name="name" type="string"/>
+            <column name="type" type="string"/>
+            <column name="description" type="string"/>
+            <column name="is_active" type="boolean"/>
+            <column name="bought_date" type="date"/>
+            <column name="price" type="decimal"/>
         </loadData>
     </changeSet>
     <changeSet id="99999999999999-2" author="jhipster">
@@ -48,14 +67,14 @@
                   tableName="tag"
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
-            <column name="description" type="string"/>
-            <column name="tag_type_id" type="numeric"/>
             <column name="created_by" type="numeric"/>
             <column name="created_on" type="date"/>
             <column name="updated_by" type="numeric"/>
             <column name="updated_on" type="date"/>
             <column name="deleted_by" type="numeric"/>
             <column name="deleted_on" type="date"/>
+            <column name="description" type="string"/>
+            <column name="tag_type_id" type="numeric"/>
         </loadData>
     </changeSet>
     <changeSet id="99999999999999-3" author="jhipster">
@@ -65,14 +84,14 @@
                   tableName="member_tag"
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
-            <column name="tag_id" type="numeric"/>
-            <column name="member_id" type="numeric"/>
             <column name="created_by" type="numeric"/>
             <column name="created_on" type="date"/>
             <column name="updated_by" type="numeric"/>
             <column name="updated_on" type="date"/>
             <column name="deleted_by" type="numeric"/>
             <column name="deleted_on" type="date"/>
+            <column name="tag_id" type="numeric"/>
+            <column name="member_id" type="numeric"/>
         </loadData>
     </changeSet>
 

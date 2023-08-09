@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="instrumentRequest">
+      <h2 data-cy="instrumentRequestDetailsHeading">
+        <span jhiTranslate="divinoApp.instrumentRequest.detail.title">Instrument Request</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl *jhiHasAnyAuthority="'ROLE_ADMIN'" class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">Código</span></dt>
+        <dd>
+          <span>{{ instrumentRequest.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrumentRequest.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ instrumentRequest.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrumentRequest.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ instrumentRequest.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrumentRequest.updatedBy">Updated By</span></dt>
+        <dd>
+          <span>{{ instrumentRequest.updatedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrumentRequest.updatedOn">Updated On</span></dt>
+        <dd>
+          <span>{{ instrumentRequest.updatedOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrumentRequest.deletedBy">Deleted By</span></dt>
+        <dd>
+          <span>{{ instrumentRequest.deletedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrumentRequest.deletedOn">Deleted On</span></dt>
+        <dd>
+          <span>{{ instrumentRequest.deletedOn | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="divinoApp.instrumentRequest.member">Member</span></dt>
+        <dd>
+          <div *ngIf="instrumentRequest.member">
+            <a [routerLink]="['/member', instrumentRequest.member.id, 'view']">{{ instrumentRequest.member.nickname }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrumentRequest.instrument">Instrument</span></dt>
+        <dd>
+          <div *ngIf="instrumentRequest.instrument">
+            <a [routerLink]="['/instrument', instrumentRequest.instrument.id, 'view']">{{ instrumentRequest.instrument.name }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrumentRequest.description">Description</span></dt>
+        <dd>
+          <span>{{ instrumentRequest.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="divinoApp.instrumentRequest.isReturned">Is Returned</span></dt>
+        <dd>
+          <span>{{ instrumentRequest.isReturned }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Voltar</span>
+      </button>
+
+      <button type="button" [routerLink]="['/instrument-request', instrumentRequest.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

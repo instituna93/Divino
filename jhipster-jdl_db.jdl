@@ -1,5 +1,16 @@
 
 // #################################################################
+//  ENUMS
+// #################################################################
+
+enum InstrumentType {
+  Cordas,
+  Sopro,
+  Percursao,
+  Outros
+}
+
+// #################################################################
 //  Tables
 // #################################################################
 entity Member {
@@ -47,7 +58,33 @@ entity MemberTag {
 	deletedOn Instant
 }
 
+entity Instrument {
+	createdBy Long
+	createdOn Instant
+	updatedBy Long
+	updatedOn Instant
+	deletedBy Long
+	deletedOn Instant
+	
+	name String unique required
+	type InstrumentType required
+	description String
+	isActive Boolean required
+	boughtDate LocalDate
+	price BigDecimal min(0)
+}
 
+entity InstrumentRequest {
+	createdBy Long
+	createdOn Instant
+	updatedBy Long
+	updatedOn Instant
+	deletedBy Long
+	deletedOn Instant
+	
+	description String
+	isReturned Boolean
+}
 
 // #################################################################
 //  Relationships
@@ -61,11 +98,9 @@ relationship ManyToOne {
 	MemberTag{tag(description) required} to Tag{members}
 	MemberTag{member(nickname) required} to Member{tags}
 	TagType{defaultTag(description)} to Tag
+	InstrumentRequest{instrument(name) required} to Instrument{requests(description)}
+	InstrumentRequest{member(nickname) required} to Member{requests(description)}
 }
-
-
-
-
 
 // #################################################################
 //  Default options

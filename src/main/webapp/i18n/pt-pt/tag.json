@@ -3,16 +3,16 @@
     "tag": {
       "home": {
         "title": "Tags",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Criar novo(a) Tag",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar nova Tag",
         "createOrEditLabel": "Criar ou editar Tag",
-        "notFound": "Nenhum Tags encontrado"
+        "notFound": "Nenhuma Tag encontrada"
       },
-      "created": "Um novo Tag foi criado com o identificador {{ param }}",
-      "updated": "Tag com identificador {{ param }} foi actualizado",
-      "deleted": "Tag com identificador {{ param }} foi eliminado",
+      "created": "Uma nova Tag foi criado com o identificador {{ param }}",
+      "updated": "Tag com identificador {{ param }} foi actualizada",
+      "deleted": "Tag com identificador {{ param }} foi eliminada",
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Tag {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar a Tag {{ id }}?"
       },
       "detail": {
         "title": "Tag"
@@ -25,8 +25,8 @@
       "deletedBy": "Deleted By",
       "deletedOn": "Deleted On",
       "description": "Description",
-      "tagType": "Tag Type",
-      "members": "Members"
+      "tagType": "Tipo de Tag",
+      "members": "Membros"
     }
   }
 }

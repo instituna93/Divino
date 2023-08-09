@@ -49,7 +49,7 @@ public class MemberServiceImpl implements MemberService {
                 memberDTO.setUpdatedBy(user.getId());
                 memberDTO.setUpdatedOn(timeStamp);
 
-                return memberRepository.save(memberMapper.toEntity(memberDTO)).log().map(memberMapper::toDto);
+                return memberRepository.save(memberMapper.toEntity(memberDTO)).map(memberMapper::toDto);
             });
     }
 
@@ -64,7 +64,7 @@ public class MemberServiceImpl implements MemberService {
                 memberDTO.setUpdatedBy(user.getId());
                 memberDTO.setUpdatedOn(timeStamp);
 
-                return memberRepository.save(memberMapper.toEntity(memberDTO)).log().map(memberMapper::toDto);
+                return memberRepository.save(memberMapper.toEntity(memberDTO)).map(memberMapper::toDto);
             });
     }
 

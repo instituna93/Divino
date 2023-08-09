@@ -60,12 +60,12 @@ export class MemberTagFormService {
           validators: [Validators.required],
         }
       ),
-      createdBy: new FormControl({ value: memberTagRawValue.createdBy, disabled: true }),
-      createdOn: new FormControl({ value: memberTagRawValue.createdOn, disabled: true }),
-      updatedBy: new FormControl({ value: memberTagRawValue.updatedBy, disabled: true }),
-      updatedOn: new FormControl({ value: memberTagRawValue.updatedOn, disabled: true }),
-      deletedBy: new FormControl({ value: memberTagRawValue.deletedBy, disabled: true }),
-      deletedOn: new FormControl({ value: memberTagRawValue.deletedOn, disabled: true }),
+      createdBy: new FormControl(memberTagRawValue.createdBy),
+      createdOn: new FormControl(memberTagRawValue.createdOn),
+      updatedBy: new FormControl(memberTagRawValue.updatedBy),
+      updatedOn: new FormControl(memberTagRawValue.updatedOn),
+      deletedBy: new FormControl(memberTagRawValue.deletedBy),
+      deletedOn: new FormControl(memberTagRawValue.deletedOn),
       tag: new FormControl(memberTagRawValue.tag, {
         validators: [Validators.required],
       }),

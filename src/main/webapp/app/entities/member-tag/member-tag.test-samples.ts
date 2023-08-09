@@ -3,26 +3,26 @@ import dayjs from 'dayjs/esm';
 import { IMemberTag, NewMemberTag } from './member-tag.model';
 
 export const sampleWithRequiredData: IMemberTag = {
-  id: 7791,
+  id: 8872,
 };
 
 export const sampleWithPartialData: IMemberTag = {
-  id: 21368,
-  createdOn: dayjs('2023-07-25T12:14'),
-  updatedBy: 21308,
-  updatedOn: dayjs('2023-07-25T14:31'),
-  deletedBy: 29269,
-  deletedOn: dayjs('2023-07-25T09:14'),
+  id: 9187,
+  createdBy: 29127,
+  createdOn: dayjs('2023-07-25T13:46'),
+  updatedBy: 19012,
+  updatedOn: dayjs('2023-07-25T23:44'),
+  deletedBy: 10021,
 };
 
 export const sampleWithFullData: IMemberTag = {
-  id: 3766,
-  createdBy: 10668,
-  createdOn: dayjs('2023-07-25T12:59'),
-  updatedBy: 11025,
-  updatedOn: dayjs('2023-07-25T17:27'),
-  deletedBy: 18729,
-  deletedOn: dayjs('2023-07-25T14:05'),
+  id: 31678,
+  createdBy: 31367,
+  createdOn: dayjs('2023-07-25T18:58'),
+  updatedBy: 13770,
+  updatedOn: dayjs('2023-07-25T22:33'),
+  deletedBy: 13363,
+  deletedOn: dayjs('2023-07-25T08:40'),
 };
 
 export const sampleWithNewData: NewMemberTag = {

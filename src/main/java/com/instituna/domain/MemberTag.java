@@ -45,7 +45,7 @@ public class MemberTag implements Serializable {
     private Tag tag;
 
     @Transient
-    @JsonIgnoreProperties(value = { "user", "tags" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "user", "tags", "requests" }, allowSetters = true)
     private Member member;
 
     @Column("tag_id")

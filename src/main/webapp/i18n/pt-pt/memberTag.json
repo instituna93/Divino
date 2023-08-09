@@ -2,20 +2,20 @@
   "divinoApp": {
     "memberTag": {
       "home": {
-        "title": "Member Tags",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Criar novo(a) Member Tag",
-        "createOrEditLabel": "Criar ou editar Member Tag",
-        "notFound": "Nenhum Member Tags encontrado"
+        "title": "Tags de Membros",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar nova Tag de Membro",
+        "createOrEditLabel": "Criar ou editar Tag de Membro",
+        "notFound": "Nenhuma Tag de Membro encontrado"
       },
-      "created": "Um novo Member Tag foi criado com o identificador {{ param }}",
-      "updated": "Member Tag com identificador {{ param }} foi actualizado",
-      "deleted": "Member Tag com identificador {{ param }} foi eliminado",
+      "created": "Um novo Tag de MembroTag de Membro foi criado com o identificador {{ param }}",
+      "updated": "Tag de Membro com identificador {{ param }} foi actualizado",
+      "deleted": "Tag de Membro com identificador {{ param }} foi eliminado",
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Member Tag {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar a Tag de Membro {{ id }}?"
       },
       "detail": {
-        "title": "Member Tag"
+        "title": "Tag de Membro"
       },
       "id": "ID",
       "createdBy": "Created By",
@@ -25,7 +25,7 @@
       "deletedBy": "Deleted By",
       "deletedOn": "Deleted On",
       "tag": "Tag",
-      "member": "Member"
+      "member": "Membro"
     }
   }
 }

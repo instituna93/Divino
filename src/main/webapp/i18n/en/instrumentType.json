@@ -1,0 +1,11 @@
+{
+  "divinoApp": {
+    "InstrumentType": {
+      "null": "",
+      "Cordas": "Cordas",
+      "Sopro": "Sopro",
+      "Percursao": "Percursao",
+      "Outros": "Outros"
+    }
+  }
+}

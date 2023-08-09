@@ -55,6 +55,10 @@ public class Member implements Serializable {
     @JsonIgnoreProperties(value = { "tag", "member" }, allowSetters = true)
     private Set<MemberTag> tags = new HashSet<>();
 
+    @Transient
+    @JsonIgnoreProperties(value = { "instrument", "member" }, allowSetters = true)
+    private Set<InstrumentRequest> requests = new HashSet<>();
+
     @Column("user_id")
     private Long userId;
 
@@ -219,6 +223,37 @@ public class Member implements Serializable {
     public Member removeTags(MemberTag memberTag) {
         this.tags.remove(memberTag);
         memberTag.setMember(null);
+        return this;
+    }
+
+    public Set<InstrumentRequest> getRequests() {
+        return this.requests;
+    }
+
+    public void setRequests(Set<InstrumentRequest> instrumentRequests) {
+        if (this.requests != null) {
+            this.requests.forEach(i -> i.setMember(null));
+        }
+        if (instrumentRequests != null) {
+            instrumentRequests.forEach(i -> i.setMember(this));
+        }
+        this.requests = instrumentRequests;
+    }
+
+    public Member requests(Set<InstrumentRequest> instrumentRequests) {
+        this.setRequests(instrumentRequests);
+        return this;
+    }
+
+    public Member addRequests(InstrumentRequest instrumentRequest) {
+        this.requests.add(instrumentRequest);
+        instrumentRequest.setMember(this);
+        return this;
+    }
+
+    public Member removeRequests(InstrumentRequest instrumentRequest) {
+        this.requests.remove(instrumentRequest);
+        instrumentRequest.setMember(null);
         return this;
     }
 

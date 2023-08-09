@@ -442,10 +442,12 @@ class TagResourceIT {
         partialUpdatedTag.setId(tag.getId());
 
         partialUpdatedTag
+            .createdBy(UPDATED_CREATED_BY)
             .createdOn(UPDATED_CREATED_ON)
             .updatedBy(UPDATED_UPDATED_BY)
             .updatedOn(UPDATED_UPDATED_ON)
             .deletedBy(UPDATED_DELETED_BY)
+            .deletedOn(UPDATED_DELETED_ON)
             .description(UPDATED_DESCRIPTION);
 
         webTestClient
@@ -461,12 +463,12 @@ class TagResourceIT {
         List<Tag> tagList = tagRepository.findAll().collectList().block();
         assertThat(tagList).hasSize(databaseSizeBeforeUpdate);
         Tag testTag = tagList.get(tagList.size() - 1);
-        assertThat(testTag.getCreatedBy()).isEqualTo(DEFAULT_CREATED_BY);
+        assertThat(testTag.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
         assertThat(testTag.getCreatedOn()).isEqualTo(UPDATED_CREATED_ON);
         assertThat(testTag.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
         assertThat(testTag.getUpdatedOn()).isEqualTo(UPDATED_UPDATED_ON);
         assertThat(testTag.getDeletedBy()).isEqualTo(UPDATED_DELETED_BY);
-        assertThat(testTag.getDeletedOn()).isEqualTo(DEFAULT_DELETED_ON);
+        assertThat(testTag.getDeletedOn()).isEqualTo(UPDATED_DELETED_ON);
         assertThat(testTag.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
     }
 

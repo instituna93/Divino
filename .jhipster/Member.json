@@ -54,6 +54,14 @@
       "relationshipName": "tags",
       "relationshipSide": "right",
       "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "description",
+      "otherEntityName": "instrumentRequest",
+      "otherEntityRelationshipName": "member",
+      "relationshipName": "requests",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
     }
   ],
   "searchEngine": "no",

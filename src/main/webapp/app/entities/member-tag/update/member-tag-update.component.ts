@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
 
 import SharedModule from 'app/shared/shared.module';
-import HasAnyAuthorityDirective from 'app/shared/auth/has-any-authority.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MemberTagFormService, MemberTagFormGroup } from './member-tag-form.service';
@@ -20,7 +19,7 @@ import { MemberService } from 'app/entities/member/service/member.service';
   standalone: true,
   selector: 'jhi-member-tag-update',
   templateUrl: './member-tag-update.component.html',
-  imports: [SharedModule, HasAnyAuthorityDirective, FormsModule, ReactiveFormsModule],
+  imports: [SharedModule, FormsModule, ReactiveFormsModule],
 })
 export class MemberTagUpdateComponent implements OnInit {
   isSaving = false;

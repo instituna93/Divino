@@ -27,7 +27,8 @@
       "nickname": "Nickname",
       "birthday": "Birthday",
       "user": "User",
-      "tags": "Tags"
+      "tags": "Tags",
+      "requests": "Requests"
     }
   }
 }

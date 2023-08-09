@@ -5,7 +5,6 @@ import { combineLatest, filter, Observable, switchMap, tap } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import SharedModule from 'app/shared/shared.module';
-import HasAnyAuthorityDirective from 'app/shared/auth/has-any-authority.directive';
 import { SortDirective, SortByDirective } from 'app/shared/sort';
 import { DurationPipe, FormatMediumDatetimePipe, FormatMediumDatePipe } from 'app/shared/date';
 import { FormsModule } from '@angular/forms';
@@ -24,9 +23,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
   templateUrl: './member-tag.component.html',
   imports: [
     RouterModule,
-    SharedModule,
-    HasAnyAuthorityDirective,
     FormsModule,
+    SharedModule,
     SortDirective,
     SortByDirective,
     DurationPipe,

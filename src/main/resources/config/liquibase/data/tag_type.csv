@@ -1,7 +1,7 @@
-id;description;restricted;created_by;created_on;updated_by;updated_on;deleted_by;deleted_on
-1;Hierarquia;true;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null
-2;Cargo de Direção;true;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null
-3;Naipe;true;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null
-4;Instrumento;true;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null
-5;Problema de Saude;false;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null
-6;Restrição Alimentar;false;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null
+id;created_by;created_on;updated_by;updated_on;deleted_by;deleted_on;description;restricted
+1;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Hierarquia;TRUE
+2;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Cargo de Direção;TRUE
+3;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Naipe;TRUE
+4;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Instrumento;TRUE
+5;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Problema de Saude;FALSE
+6;1;2023-07-25T09:56:03;1;2023-07-25T09:56:03;null;null;Restrição Alimentar;FALSE
